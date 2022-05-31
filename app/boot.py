@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import board
 import adafruit_bmp280
 i2c = board.I2C()
 
