@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import time
-import bmp280 import BPM280
+from bmp280 import BPM280
 
 try:
     from smbus2 import SMBus
