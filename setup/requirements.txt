@@ -1,1 +1,2 @@
 adafruit-circuitpython-bmp280
+adafruit-circuitpython-rgb-display
