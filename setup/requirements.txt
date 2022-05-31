@@ -1,1 +1,1 @@
-bmp280
+adafruit-circuitpython-bmp280
