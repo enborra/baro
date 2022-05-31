@@ -31,6 +31,6 @@ i2c = board.I2C()  # uses board.SCL and board.SDA
 sensor = adafruit_ahtx0.AHTx0(i2c)
 
 while True:
-    print("\nTemperature: %0.1f C" % sensor.temperature)
+    print("\nTemperature: %0.1f C" % ((sensor.temperature*1.8)+32))
     print("Humidity: %0.1f %%" % sensor.relative_humidity)
     time.sleep(2)
