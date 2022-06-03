@@ -46,5 +46,5 @@ spi = busio.SPI(clock=board.SCK, MOSI=board.MOSI, MISO=board.MISO)
 display = ili9341.ILI9341(spi, cs=digitalio.DigitalInOut(board.CE0),
     dc=digitalio.DigitalInOut(board.D25))
 
-display.fill(color565(0xff, 0x11, 0x22))
-display.hline(0, 200, 100, color565(0x00, 0x00, 0x00))
+display.fill(color565(0x00, 0x00, 0x00))
+display.drawLine(0, 0, 200, 200, color565(0xff, 0xff, 0xff))
