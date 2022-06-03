@@ -48,12 +48,21 @@ display = ili9341.ILI9341(spi, cs=digitalio.DigitalInOut(board.CE0),
 
 
 while True:
-    display.fill(color565(0x00, 0x00, 0x00))
-    display.fill_circle(100, 120, 20, color565(0xff, 0xff, 0xff))
-    display.fill_circle(100, 220, 20, color565(0xff, 0xff, 0xff))
+    # display.fill(color565(0x00, 0x00, 0x00))
+    # display.fill_circle(100, 120, 20, color565(0xff, 0xff, 0xff))
+    # display.fill_circle(100, 220, 20, color565(0xff, 0xff, 0xff))
+    #
+    # time.sleep(2)
+    #
+    # display.fill(color565(0x00, 0x00, 0x00))
 
-    time.sleep(2)
+    from adafruit_display_text import label
 
-    display.fill(color565(0x00, 0x00, 0x00))
+
+    text = "Hello world"
+    text_area = label.Label(terminalio.FONT, text=text)
+    text_area.x = 10
+    text_area.y = 10
+    board.DISPLAY.show(text_area)
 
     time.sleep(2)
