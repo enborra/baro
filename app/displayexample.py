@@ -64,6 +64,12 @@ while True:
     text_area = label.Label(terminalio.FONT, text=text)
     text_area.x = 10
     text_area.y = 10
-    display.append(text_area)
+
+    my_display_group = displayio.Group()
+
+    my_display_group.append(text_area)
+    display.show(my_display_group)
+
+    board.DISPLAY.show(text_area)
 
     time.sleep(2)
