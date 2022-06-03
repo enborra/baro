@@ -95,7 +95,11 @@ while True:
 
 
     text = "Hello world"
-    text_area = label.Label(terminalio.FONT, text=text)
+    text_area = label.Label(
+        terminalio.FONT,
+        text=text,
+        scale=4
+    )
     text_area.x = 100
     text_area.y = 10
 
