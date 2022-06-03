@@ -26,7 +26,7 @@ while True:
     # Clear the display
     display.fill(0)
     # Draw a red pixel in the center.
-    display.pixel(120, 160, color565(255, 0, 0))
+    display.pixel(0, 0, color565(255, 0, 0))
     # Pause 2 seconds.
     time.sleep(2)
     # Clear the screen blue.
