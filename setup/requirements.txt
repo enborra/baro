@@ -4,3 +4,4 @@ adafruit-circuitpython-ahtx0
 adafruit-circuitpython-lis3dh
 adafruit-circuitpython-display-text
 adafruit-circuitpython-ili9341
+adafruit-circuitpython-bitmap_font
