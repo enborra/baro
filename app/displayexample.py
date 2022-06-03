@@ -46,5 +46,13 @@ spi = busio.SPI(clock=board.SCK, MOSI=board.MOSI, MISO=board.MISO)
 display = ili9341.ILI9341(spi, cs=digitalio.DigitalInOut(board.CE0),
     dc=digitalio.DigitalInOut(board.D25))
 
-display.fill(color565(0xff, 0xff, 0xff))
-display.fill_rectangle(10, 10, 220, 300, color565(0x00, 0x00, 0x00))
+
+while True:
+    display.fill(color565(0xff, 0xff, 0xff))
+    display.fill_rectangle(10, 10, 220, 300, color565(0x00, 0x00, 0x00))
+
+    time.sleep(2)
+
+    display.fill(color565(0x00, 0x00, 0x00))
+
+    time.sleep(2)
