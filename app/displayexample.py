@@ -52,8 +52,8 @@ spi = busio.SPI(
 
 display = Adafruit_ILI9341.ILI9341(
     spi,
-    cs=digitalio.DigitalInOut(board.CE0),
-    dc=digitalio.DigitalInOut(board.D25),
+    # cs=digitalio.DigitalInOut(board.CE0),
+    # dc=digitalio.DigitalInOut(board.D25),
     width=320,
     height=240
 )
