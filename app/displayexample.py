@@ -98,7 +98,7 @@ while True:
     text_area = label.Label(
         terminalio.FONT,
         text=text,
-        scale=2
+        scale=1
     )
     text_area.x = 100
     text_area.y = 10
