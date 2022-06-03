@@ -34,7 +34,7 @@
 #     # Pause 2 seconds.
 #     time.sleep(2)
 
-
+import time
 import busio
 import digitalio
 import board
