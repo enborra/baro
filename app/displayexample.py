@@ -49,7 +49,7 @@ display = ili9341.ILI9341(spi, cs=digitalio.DigitalInOut(board.CE0),
 
 while True:
     display.fill(color565(0xff, 0xff, 0xff))
-    display.fill_rectangle(10, 10, 220, 300, color565(0x00, 0x00, 0x00))
+    display.fill_rectangle(100, 140, 140, 180, color565(0x00, 0x00, 0x00))
 
     time.sleep(2)
 
