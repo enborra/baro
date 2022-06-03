@@ -3,4 +3,3 @@ adafruit-circuitpython-rgb-display
 adafruit-circuitpython-ahtx0
 adafruit-circuitpython-lis3dh
 adafruit-circuitpython-display-text
-adafruit-circuitpython-terminal
