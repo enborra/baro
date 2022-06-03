@@ -40,7 +40,8 @@ import digitalio
 import board
 from adafruit_rgb_display import color565
 # import adafruit_rgb_display.ili9341 as ili9341
-from Adafruit_ILI9341 import adafruit_ili9341
+import adafruit_rgb_display.ili9341 as adafruit_ili9341
+# from Adafruit_ILI9341 import adafruit_ili9341
 import terminalio
 import displayio
 
