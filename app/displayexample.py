@@ -50,7 +50,7 @@ spi = busio.SPI(
     MISO=board.MISO
 )
 
-display = adafruit_ili9341.ILI9341(
+display = Adafruit_ILI9341.ILI9341(
     spi,
     cs=digitalio.DigitalInOut(board.CE0),
     dc=digitalio.DigitalInOut(board.D25),
