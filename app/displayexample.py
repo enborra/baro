@@ -43,10 +43,22 @@ import adafruit_rgb_display.ili9341 as ili9341
 import terminalio
 import displayio
 
-spi = busio.SPI(clock=board.SCK, MOSI=board.MOSI, MISO=board.MISO)
+spi = busio.SPI(
+    clock=board.SCK,
+    MOSI=board.MOSI,
+    MISO=board.MISO
+)
 
-display = ili9341.ILI9341(spi, cs=digitalio.DigitalInOut(board.CE0),
-    dc=digitalio.DigitalInOut(board.D25))
+display = ili9341.ILI9341(
+    spi,
+    cs=digitalio.DigitalInOut(board.CE0),
+    dc=digitalio.DigitalInOut(board.D25),
+    width=320,
+    height=240
+)
+
+splash = displayio.Group()
+display.show(splash)
 
 
 while True:
@@ -58,17 +70,17 @@ while True:
     #
     # display.fill(color565(0x00, 0x00, 0x00))
 
-    from adafruit_display_text import label
-
-
-    text = "Hello world"
-    text_area = label.Label(terminalio.FONT, text=text)
-    text_area.x = 10
-    text_area.y = 10
-
-    my_display_group = displayio.Group()
-
-    my_display_group.append(text_area)
-    display.show(my_display_group)
+    # from adafruit_display_text import label
+    #
+    #
+    # text = "Hello world"
+    # text_area = label.Label(terminalio.FONT, text=text)
+    # text_area.x = 10
+    # text_area.y = 10
+    #
+    # my_display_group = displayio.Group()
+    #
+    # my_display_group.append(text_area)
+    # display.show(my_display_group)
 
     time.sleep(2)
