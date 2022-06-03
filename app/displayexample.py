@@ -70,6 +70,4 @@ while True:
     my_display_group.append(text_area)
     display.show(my_display_group)
 
-    board.DISPLAY.show(text_area)
-
     time.sleep(2)
