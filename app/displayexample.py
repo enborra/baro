@@ -96,7 +96,7 @@ while True:
 
     text = "Hello world"
     text_area = label.Label(terminalio.FONT, text=text)
-    text_area.x = 10
+    text_area.x = 100
     text_area.y = 10
 
     splash.append(text_area)
