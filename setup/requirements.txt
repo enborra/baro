@@ -3,4 +3,4 @@ adafruit-circuitpython-rgb-display
 adafruit-circuitpython-ahtx0
 adafruit-circuitpython-lis3dh
 adafruit-circuitpython-display-text
-Adafruit_ILI9341
+adafruit-circuitpython-ili9341
