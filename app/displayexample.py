@@ -43,6 +43,7 @@ from adafruit_rgb_display import color565
 import adafruit_ili9341
 import terminalio
 import displayio
+from adafruit_display_text import label
 
 
 displayio.release_displays()
@@ -91,17 +92,14 @@ while True:
     #
     # display.fill(color565(0x00, 0x00, 0x00))
 
-    # from adafruit_display_text import label
-    #
-    #
-    # text = "Hello world"
-    # text_area = label.Label(terminalio.FONT, text=text)
-    # text_area.x = 10
-    # text_area.y = 10
-    #
-    # my_display_group = displayio.Group()
-    #
-    # my_display_group.append(text_area)
+
+
+    text = "Hello world"
+    text_area = label.Label(terminalio.FONT, text=text)
+    text_area.x = 10
+    text_area.y = 10
+
+    splash.append(text_area)
     # display.show(my_display_group)
 
     time.sleep(2)
