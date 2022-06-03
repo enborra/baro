@@ -44,16 +44,36 @@ import Adafruit_ILI9341
 import terminalio
 import displayio
 
-spi = busio.SPI(
-    clock=board.SCK,
-    MOSI=board.MOSI,
-    MISO=board.MISO
+
+displayio.release_displays()
+
+# spi = busio.SPI(
+#     clock=board.SCK,
+#     MOSI=board.MOSI,
+#     MISO=board.MISO
+# )
+
+# display = Adafruit_ILI9341.ILI9341(
+#     spi,
+#     cs=digitalio.DigitalInOut(board.CE0),
+#     dc=digitalio.DigitalInOut(board.D25),
+#     width=320,
+#     height=240
+# )
+
+spi = board.SPI()
+tft_cs = board.CE0
+tft_dc = board.D25
+
+display_bus = displayio.FourWire(
+    spi,
+    command=tft_dc,
+    chip_select=tft_cs,
+    reset=board.D6
 )
 
-display = Adafruit_ILI9341.ILI9341(
-    spi,
-    # cs=digitalio.DigitalInOut(board.CE0),
-    # dc=digitalio.DigitalInOut(board.D25),
+display = Adafruit_ILI9341(
+    display_bus,
     width=320,
     height=240
 )
