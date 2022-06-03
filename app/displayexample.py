@@ -41,6 +41,7 @@ import board
 from adafruit_rgb_display import color565
 import adafruit_rgb_display.ili9341 as ili9341
 import terminalio
+import displayio
 
 spi = busio.SPI(clock=board.SCK, MOSI=board.MOSI, MISO=board.MISO)
 
