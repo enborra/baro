@@ -72,7 +72,7 @@ display_bus = displayio.FourWire(
     reset=board.D6
 )
 
-display = adafruit_ili9341.ILI9341(
+display = Adafruit_ILI9341.ILI9341(
     display_bus,
     width=320,
     height=240
