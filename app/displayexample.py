@@ -39,7 +39,8 @@ import busio
 import digitalio
 import board
 from adafruit_rgb_display import color565
-import adafruit_rgb_display.ili9341 as ili9341
+# import adafruit_rgb_display.ili9341 as ili9341
+import adafruit_ili9341
 import terminalio
 import displayio
 
@@ -49,7 +50,7 @@ spi = busio.SPI(
     MISO=board.MISO
 )
 
-display = ili9341.ILI9341(
+display = adafruit_ili9341.ILI9341(
     spi,
     cs=digitalio.DigitalInOut(board.CE0),
     dc=digitalio.DigitalInOut(board.D25),
