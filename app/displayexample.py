@@ -8,8 +8,10 @@ import adafruit_rgb_display.ili9341 as ili9341
 
 
 # Configuration for CS and DC pins:
-CS_PIN = D2
-DC_PIN = D3
+# CS_PIN = D2
+# DC_PIN = D3
+CS_PIN = CE0
+DC_PIN = D25
 
 # Setup SPI bus using hardware SPI:
 spi = busio.SPI(clock=SCK, MOSI=MOSI, MISO=MISO)
