@@ -37,7 +37,7 @@ font = bitmap_font.load_font(font_file)
 # Set text, font, and color
 text = "HELLO WORLD"
 font = bitmap_font.load_font(font_file)
-color = 0xFF00FF
+color = 0xFFFFFF
 
 # Create the tet label
 text_area = label.Label(font, text=text, color=color)
