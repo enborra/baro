@@ -50,13 +50,16 @@ while True:
     text_area.x = 40
     text_area.y = 80
     text_area.scale = 1
-    display.show(text_area)
+    splash.append(text_area)
 
     text = "6:00 pm"
     text_area_time = label.Label(font_small, text=text, color=0xff)
     text_area_time.x = 5
     text_area_time.y = 5
     text_area.scale = 1
-    display.show(text_area_time)
+    splash.append(text_area_time)
+
+    # display.show(text_area)
+    # display.show(text_area_time)
 
     time.sleep(60)
