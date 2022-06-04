@@ -29,7 +29,7 @@ splash = displayio.Group()
 display.show(splash)
 
 
-font_file = "fonts/futura-medium-72.ttc"
+font_file = "fonts/futura-medium-72.bdf"
 
 font = bitmap_font.load_font(font_file)
 
