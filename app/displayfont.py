@@ -49,8 +49,8 @@ color = 0xFFFFFF
 text_area = label.Label(font, text=text, color=color)
 
 # Set the location
-text_area.x = 80
-text_area.y = 120
+text_area.x = 90
+text_area.y = 110
 text_area.scale = 1
 
 # Show it
