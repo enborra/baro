@@ -30,7 +30,7 @@ splash = displayio.Group()
 display.show(splash)
 
 
-font_file = "fonts/futura-medium-35.bdf"
+font_file = "fonts/futura-medium-20.bdf"
 
 font = bitmap_font.load_font(font_file)
 
