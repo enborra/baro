@@ -41,7 +41,7 @@ curr_date = date.today()
 day_of_week = calendar.day_name[curr_date.weekday()]
 
 # Set text, font, and color
-text = day_of_week
+text = day_of_week.upper()
 font = bitmap_font.load_font(font_file)
 color = 0xFFFFFF
 
