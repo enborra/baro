@@ -1,4 +1,5 @@
 import time
+from time import gmtime, strftime
 from datetime import date
 import calendar
 
@@ -52,8 +53,8 @@ while True:
     text_area.scale = 1
     splash.append(text_area)
 
-    text = "6:00 pm"
-    text_area_time = label.Label(font_small, text=text, color=0xff)
+    text = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+    text_area_time = label.Label(font_small, text=text, color=0xaaaaaa)
     text_area_time.x = 5
     text_area_time.y = 5
     text_area.scale = 1
