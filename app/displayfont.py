@@ -22,7 +22,8 @@ display_bus = displayio.FourWire(
 display = adafruit_ili9341.ILI9341(
     display_bus,
     width=320,
-    height=240
+    height=240,
+    rotation=180
 )
 
 splash = displayio.Group()
