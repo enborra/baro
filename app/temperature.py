@@ -46,7 +46,7 @@ while True:
     humidity = "Humidity: %d" % sensor.relative_humidity
 
     text = temp + "\n" + humidity
-    text_area = label.Label(font, text=text, color=0xffffff)
+    text_area = label.Label(font_large, text=text, color=0xffffff)
     text_area.x = 40
     text_area.y = 80
     text_area.scale = 1
