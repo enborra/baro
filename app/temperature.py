@@ -53,7 +53,7 @@ while True:
     text_area.scale = 1
     splash.append(text_area)
 
-    text = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+    text = strftime("%H:%M", gmtime())
     text_area_time = label.Label(font_small, text=text, color=0xaaaaaa)
     text_area_time.x = 5
     text_area_time.y = 5
