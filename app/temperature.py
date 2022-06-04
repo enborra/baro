@@ -43,6 +43,8 @@ font_large = bitmap_font.load_font("fonts/futura-medium-35.bdf")
 font_small = bitmap_font.load_font("fonts/futura-medium-20.bdf")
 
 while True:
+    display.drawRect(0,0,width,height, color565(0xff,0xff,0xff))
+
     temp = "Temp: %d°F" % ((sensor.temperature*1.8)+32)
     humidity = "Humidity: %d" % sensor.relative_humidity
 
