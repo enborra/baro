@@ -1,3 +1,6 @@
+from datetime import date
+import calendar
+
 import board
 import displayio
 
@@ -30,12 +33,15 @@ splash = displayio.Group()
 display.show(splash)
 
 
-font_file = "fonts/futura-medium-20.bdf"
+font_file = "fonts/futura-medium-35.bdf"
 
 font = bitmap_font.load_font(font_file)
 
+curr_date = date.today()
+day_of_week = calendar.day_name[curr_date.weekday()]
+
 # Set text, font, and color
-text = "HELLO WORLD"
+text = day_of_week
 font = bitmap_font.load_font(font_file)
 color = 0xFFFFFF
 
