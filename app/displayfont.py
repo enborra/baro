@@ -33,53 +33,20 @@ font_file = "fonts/futura-medium-72.bdf"
 
 font = bitmap_font.load_font(font_file)
 
-bitmap = displayio.Bitmap(display.width, display.height, 2)
+# Set text, font, and color
+text = "HELLO WORLD"
+font = bitmap_font.load_font(font_file)
+color = 0xFF00FF
 
-palette = displayio.Palette(2)
+# Create the tet label
+text_area = label.Label(font, text=text, color=color)
 
-palette[0] = 0x000000
-palette[1] = 0xFFFFFF
+# Set the location
+text_area.x = 20
+text_area.y = 20
 
-_, height, _, dy = font.get_bounding_box()
-for y in range(height):
-    pixels = []
-    for c in "Adafruit CircuitPython":
-        glyph = font.get_glyph(ord(c))
-        if not glyph:
-            continue
-        glyph_y = y + (glyph.height - (height + dy)) + glyph.dy
-
-        if 0 <= glyph_y < glyph.height:
-            for i in range(glyph.width):
-                value = glyph.bitmap[i, glyph_y]
-                pixel = 0
-                if value > 0:
-                    pixel = 1
-                pixels.append(pixel)
-        else:
-            # empty section for this glyph
-            for i in range(glyph.width):
-                pixels.append(0)
-
-        # one space between glyph
-        pixels.append(0)
-
-    if pixels:
-        for x, pixel in enumerate(pixels):
-            bitmap[x, y] = pixel
-
-# Create a TileGrid to hold the bitmap
-tile_grid = displayio.TileGrid(bitmap, pixel_shader=palette)
-
-# Create a Group to hold the TileGrid
-group = displayio.Group()
-
-group.x = 20
-# Add the TileGrid to the Group
-group.append(tile_grid)
-
-# Add the Group to the Display
-display.show(group)
+# Show it
+display.show(text_area)
 
 while True:
     pass
