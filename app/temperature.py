@@ -44,7 +44,7 @@ font_file = "fonts/futura-medium-35.bdf"
 font = bitmap_font.load_font(font_file)
 
 while True:
-    temp = "Temp: %d° F" % ((sensor.temperature*1.8)+32)
+    temp = "Temp: %d°F" % ((sensor.temperature*1.8)+32)
     humidity = "Humidity: %d" % sensor.relative_humidity
 
     text = temp
@@ -55,7 +55,7 @@ while True:
     text_area = label.Label(font, text=text, color=color)
 
     # Set the location
-    text_area.x = 90
+    text_area.x = 40
     text_area.y = 110
     text_area.scale = 1
 
