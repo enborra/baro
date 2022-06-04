@@ -30,7 +30,7 @@ splash = displayio.Group()
 display.show(splash)
 
 
-font_file = "fonts/futura-medium-72.bdf"
+font_file = "fonts/futura-medium-35.bdf"
 
 font = bitmap_font.load_font(font_file)
 
@@ -45,7 +45,7 @@ text_area = label.Label(font, text=text, color=color)
 # Set the location
 text_area.x = 20
 text_area.y = 20
-text_area.scale = 0.1
+text_area.scale = 1
 
 # Show it
 display.show(text_area)
