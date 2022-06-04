@@ -43,7 +43,11 @@ font_large = bitmap_font.load_font("fonts/futura-medium-35.bdf")
 font_small = bitmap_font.load_font("fonts/futura-medium-20.bdf")
 
 while True:
-    display.clearDisplay()
+    color_bitmap = displayio.Bitmap(320, 240, 1)
+    color_palette = displayio.Palette(1)
+    color_palette[0] = 0x000000
+    bg_sprite = displayio.TileGrid(color_bitmap, x=0, y=0, pixel_shader=color_palette)
+    splash.append(bg_sprite)
 
     temp = "Temp: %d°F" % ((sensor.temperature*1.8)+32)
     humidity = "Humidity: %d" % sensor.relative_humidity
