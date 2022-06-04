@@ -56,7 +56,7 @@ while True:
 
     # Set the location
     text_area.x = 40
-    text_area.y = 110
+    text_area.y = 100
     text_area.scale = 1
 
     # Show it
