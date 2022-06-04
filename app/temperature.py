@@ -45,7 +45,7 @@ font = bitmap_font.load_font(font_file)
 
 while True:
     temp = "Temp: %0f° F" % ((sensor.temperature*1.8)+32)
-    humidity = "Humidity: %0.0f %%" % sensor.relative_humidity
+    humidity = "Humidity: %0.n %%" % sensor.relative_humidity
 
     text = temp
     font = bitmap_font.load_font(font_file)
