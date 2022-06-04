@@ -44,7 +44,7 @@ font_file = "fonts/futura-medium-35.bdf"
 font = bitmap_font.load_font(font_file)
 
 while True:
-    temp = "Temp: %0f° F" % ((sensor.temperature*1.8)+32)
+    temp = "Temp: %d° F" % ((sensor.temperature*1.8)+32)
     humidity = "Humidity: %d" % sensor.relative_humidity
 
     text = temp
