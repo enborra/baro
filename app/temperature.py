@@ -38,28 +38,25 @@ display = adafruit_ili9341.ILI9341(
 splash = displayio.Group()
 display.show(splash)
 
-
-font_file = "fonts/futura-medium-35.bdf"
-
-font = bitmap_font.load_font(font_file)
+font_large = bitmap_font.load_font("fonts/futura-medium-35.bdf")
+font_small = bitmap_font.load_font("fonts/futura-medium-20.bdf")
 
 while True:
     temp = "Temp: %d°F" % ((sensor.temperature*1.8)+32)
     humidity = "Humidity: %d" % sensor.relative_humidity
 
     text = temp + "\n" + humidity
-    font = bitmap_font.load_font(font_file)
-    color = 0xFFFFFF
-
-    # Create the tet label
-    text_area = label.Label(font, text=text, color=color)
-
-    # Set the location
+    text_area = label.Label(font, text=text, color=0xffffff)
     text_area.x = 40
     text_area.y = 80
     text_area.scale = 1
-
-    # Show it
     display.show(text_area)
+
+    text = "6:00 pm"
+    text_area_time = label.Label(font_small, text=text, color=0xff)
+    text_area_time.x = 5
+    text_area_time.y = 5
+    text_area.scale = 1
+    display.show(text_area_time)
 
     time.sleep(60)
