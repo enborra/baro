@@ -55,8 +55,8 @@ while True:
 
     text = strftime("%H:%M", gmtime())
     text_area_time = label.Label(font_small, text=text, color=0xaaaaaa)
-    text_area_time.x = 5
-    text_area_time.y = 5
+    text_area_time.x = 15
+    text_area_time.y = 15
     text_area.scale = 1
     splash.append(text_area_time)
 
