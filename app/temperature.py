@@ -73,14 +73,14 @@ while True:
     altitude = "Altitude: %d" % baroSensor.altitude
 
     t = strftime("%H:%M", time.localtime())
-    ta = label.Label(font_small, text=text, color=0xaaaaaa)
+    ta = label.Label(font_small, text=t, color=0xaaaaaa)
     ta.x = 15
     ta.y = 15
     ta.scale = 1
     splash.append(ta)
 
     t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude
-    ta = label.Label(font_small, text=text, color=0xffffff)
+    ta = label.Label(font_small, text=t, color=0xffffff)
     ta.x = 40
     ta.y = 80
     ta.scale = 1
