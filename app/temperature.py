@@ -95,7 +95,7 @@ while True:
         cycle = False
 
     else:
-        t = "Air Quality""
+        t = "Air Quality
         ta = label.Label(font_large, text=t, color=0xffffff)
         ta.x = 40
         ta.y = 80
