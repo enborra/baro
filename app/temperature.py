@@ -14,7 +14,15 @@ import adafruit_ahtx0
 
 
 i2c = board.I2C()  # uses board.SCL and board.SDA
-sensor = adafruit_ahtx0.AHTx0(i2c)
+tempSensor = adafruit_ahtx0.AHTx0(i2c)
+baroSensor = adafruit_bmp280.Adafruit_BMP280_I2C(i2c)
+
+# change this to match the location's pressure (hPa) at sea level
+baroSensor.sea_level_pressure = 1013.25
+
+
+
+
 
 displayio.release_displays()
 
@@ -60,10 +68,11 @@ while True:
     bg_sprite = displayio.TileGrid(color_bitmap, x=0, y=0, pixel_shader=color_palette)
     splash.append(bg_sprite)
 
-    temp = "Temp: %d°F" % ((sensor.temperature*1.8)+32)
-    humidity = "Humidity: %d" % sensor.relative_humidity
+    temp = "Temp: %d°F" % ((tempSensor.temperature*1.8)+32)
+    humidity = "Humidity: %d" % tempSensor.relative_humidity
+    barometric = "Barometric: %d" % baroSensor.pressure
 
-    text = temp + "\n" + humidity
+    text = temp + "\n" + humidity + "\n" + barometric
     text_area = label.Label(font_large, text=text, color=0xffffff)
     text_area.x = 40
     text_area.y = 80
