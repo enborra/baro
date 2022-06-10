@@ -69,7 +69,7 @@ while True:
 
     temp = "Temp: %d°F" % ((tempSensor.temperature*1.8)+32)
     humidity = "Humidity: %d" % tempSensor.relative_humidity
-    pressure = "Barometric: %d" % baroSensor.pressure
+    pressure = "hPa pressure: %d" % baroSensor.pressure
     altitude = "Altitude: %d" % baroSensor.altitude
 
     t = strftime("%H:%M", time.localtime())
