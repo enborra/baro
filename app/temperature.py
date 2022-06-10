@@ -76,7 +76,7 @@ while True:
     pressure = "hPa pressure: %d" % baroSensor.pressure
     altitude = "Altitude: %d" % baroSensor.altitude
     aq_dict = airSensor.read()
-    aq10 = "Dust: big - %d" % aq_dict['pm10 env']
+    aq10 = "Dust: big - %f" % aq_dict['pm10 env']
 
     t = strftime("%H:%M", time.localtime())
     ta = label.Label(font_small, text=t, color=0xaaaaaa)
