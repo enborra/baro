@@ -88,7 +88,7 @@ while True:
     text = barometric
     text_area_baro = label.Label(font_small, text=text, color=0xaaaaaa)
     text_area_baro.x = 15
-    text_area_baro.y = 100
+    text_area_baro.y = 200
     text_area.scale = 1
     splash.append(text_area_baro)
 
