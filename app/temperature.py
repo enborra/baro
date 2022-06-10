@@ -85,7 +85,7 @@ while True:
         pressure = "hPa pressure: %d" % baroSensor.pressure
         altitude = "Altitude: %d" % baroSensor.altitude
 
-        t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude + "\n" + aq10
+        t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
         ta.y = 80
@@ -103,7 +103,7 @@ while True:
         t += "pm2.5: %d" % aq['pm25 standard']
         t += "\n"
         t += "pm10: %d" % aq['pm100 standard']
-        
+
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
         ta.y = 80
