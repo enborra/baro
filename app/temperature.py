@@ -82,7 +82,7 @@ while True:
     if cycle:
         temp = "Temp: %0.1f°F" % ((tempSensor.temperature*1.8)+32)
         humidity = "Humidity: %d" % tempSensor.relative_humidity
-        pressure = "hPa pressure: %0.1f hPa" % baroSensor.pressure
+        pressure = "Pressure: %0.1f hPa" % baroSensor.pressure
         altitude = "Altitude: %d" % baroSensor.altitude
 
         t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude
@@ -104,11 +104,11 @@ while True:
 
         aq = airSensor.read()
 
-        t = "pm1:    %d" % aq['pm10 standard']
+        t = "Small dust (pm1): %d" % aq['pm10 env']
         t += "\n"
-        t += "pm2.5: %d" % aq['pm25 standard']
+        t += "Medium dust (pm2.5) - %d" % aq['pm25 env']
         t += "\n"
-        t += "pm10:  %d" % aq['pm100 standard']
+        t += "Big dust (pm10) - %d" % aq['pm100 env']
 
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
