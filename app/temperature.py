@@ -104,11 +104,11 @@ while True:
 
         aq = airSensor.read()
 
-        t = "pm1: %d" % aq['pm10 standard']
+        t = "pm1:    %d" % aq['pm10 standard']
         t += "\n"
         t += "pm2.5: %d" % aq['pm25 standard']
         t += "\n"
-        t += "pm10: %d" % aq['pm100 standard']
+        t += "pm10:  %d" % aq['pm100 standard']
 
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
