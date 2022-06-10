@@ -95,9 +95,17 @@ while True:
         cycle = False
 
     else:
+        t = "Air Quality""
+        ta = label.Label(font_large, text=t, color=0xffffff)
+        ta.x = 40
+        ta.y = 80
+        ta.scale = 1
+        splash.append(ta)
+
         aq = airSensor.read()
+
         t = "Air quality: "
-        t += "\n\n"
+        t += "\n"
         t += "pm1: %d" % aq['pm10 standard']
         t += "\n"
         t += "pm2.5: %d" % aq['pm25 standard']
@@ -106,7 +114,7 @@ while True:
 
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
-        ta.y = 80
+        ta.y = 120
         ta.scale = 1
         splash.append(ta)
 
