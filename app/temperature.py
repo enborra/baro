@@ -75,7 +75,7 @@ while True:
     humidity = "Humidity: %d" % tempSensor.relative_humidity
     pressure = "hPa pressure: %d" % baroSensor.pressure
     altitude = "Altitude: %d" % baroSensor.altitude
-    airQuality = "Air quality: %d" % pm25.read()
+    aq = "Air quality: %d" % airSensor.read()
 
     t = strftime("%H:%M", time.localtime())
     ta = label.Label(font_small, text=t, color=0xaaaaaa)
@@ -84,7 +84,7 @@ while True:
     ta.scale = 1
     splash.append(ta)
 
-    t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude + "\n" + airQuality
+    t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude + "\n" + aq
     ta = label.Label(font_small, text=t, color=0xffffff)
     ta.x = 40
     ta.y = 80
