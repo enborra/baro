@@ -1,4 +1,5 @@
 adafruit-circuitpython-bmp280
+adafruit-circuitpython-pm25
 adafruit-circuitpython-rgb-display
 adafruit-circuitpython-ahtx0
 adafruit-circuitpython-lis3dh

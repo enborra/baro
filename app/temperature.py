@@ -12,14 +12,18 @@ from adafruit_display_text import label
 from adafruit_bitmap_font import bitmap_font
 import adafruit_ahtx0
 import adafruit_bmp280
+from adafruit_pm25.i2c import PM25_I2C
 
 
 i2c = board.I2C()  # uses board.SCL and board.SDA
-tempSensor = adafruit_ahtx0.AHTx0(i2c)
-baroSensor = adafruit_bmp280.Adafruit_BMP280_I2C(i2c)
 
-# change this to match the location's pressure (hPa) at sea level
-baroSensor.sea_level_pressure = 1013.25
+tempSensor = adafruit_ahtx0.AHTx0(i2c)
+
+baroSensor = adafruit_bmp280.Adafruit_BMP280_I2C(i2c)
+baroSensor.sea_level_pressure = 1013.25 # change this to match the location's pressure (hPa) at sea level
+
+airSensor = PM25_I2C(i2c, reset_pin)
+
 
 
 
@@ -71,6 +75,7 @@ while True:
     humidity = "Humidity: %d" % tempSensor.relative_humidity
     pressure = "hPa pressure: %d" % baroSensor.pressure
     altitude = "Altitude: %d" % baroSensor.altitude
+    airQuality = "Air quality: %d" % pm25.read()
 
     t = strftime("%H:%M", time.localtime())
     ta = label.Label(font_small, text=t, color=0xaaaaaa)
@@ -79,7 +84,7 @@ while True:
     ta.scale = 1
     splash.append(ta)
 
-    t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude
+    t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude + "\n" + airQuality
     ta = label.Label(font_small, text=t, color=0xffffff)
     ta.x = 40
     ta.y = 80
