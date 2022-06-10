@@ -63,6 +63,7 @@ display.show(splash)
 
 font_large = bitmap_font.load_font("fonts/futura-medium-35.bdf")
 font_small = bitmap_font.load_font("fonts/futura-medium-20.bdf")
+cycle = True
 
 while True:
     color_bitmap = displayio.Bitmap(320, 240, 1)
@@ -71,13 +72,6 @@ while True:
     bg_sprite = displayio.TileGrid(color_bitmap, x=0, y=0, pixel_shader=color_palette)
     splash.append(bg_sprite)
 
-    temp = "Temp: %d°F" % ((tempSensor.temperature*1.8)+32)
-    humidity = "Humidity: %d" % tempSensor.relative_humidity
-    pressure = "hPa pressure: %d" % baroSensor.pressure
-    altitude = "Altitude: %d" % baroSensor.altitude
-    aq_dict = airSensor.read()
-    aq10 = "pm1: %d  pm2.5: %d  pm10: %d" % (aq_dict['pm10 env'], aq_dict['pm25 env'], aq_dict['pm100 env'])
-
     t = strftime("%H:%M", time.localtime())
     ta = label.Label(font_small, text=t, color=0xaaaaaa)
     ta.x = 15
@@ -85,12 +79,38 @@ while True:
     ta.scale = 1
     splash.append(ta)
 
-    t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude + "\n" + aq10
-    ta = label.Label(font_small, text=t, color=0xffffff)
-    ta.x = 40
-    ta.y = 80
-    ta.scale = 1
-    splash.append(ta)
+    if cycle:
+        temp = "Temp: %d°F" % ((tempSensor.temperature*1.8)+32)
+        humidity = "Humidity: %d" % tempSensor.relative_humidity
+        pressure = "hPa pressure: %d" % baroSensor.pressure
+        altitude = "Altitude: %d" % baroSensor.altitude
+
+        t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude + "\n" + aq10
+        ta = label.Label(font_small, text=t, color=0xffffff)
+        ta.x = 40
+        ta.y = 80
+        ta.scale = 1
+        splash.append(ta)
+
+        cycle = False
+
+    else:
+        aq = airSensor.read()
+        t = "Air quality: "
+        t += "\n\n"
+        t += "pm1: %d" % aq['pm10 standard']
+        t += "\n"
+        t += "pm2.5: %d" % aq['pm25 standard']
+        t += "\n"
+        t += "pm10: %d" % aq['pm100 standard']
+        
+        ta = label.Label(font_small, text=t, color=0xffffff)
+        ta.x = 40
+        ta.y = 80
+        ta.scale = 1
+        splash.append(ta)
+
+        cycle = True
 
     # display.show(text_area)
     # display.show(text_area_time)
