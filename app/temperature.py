@@ -75,8 +75,8 @@ while True:
     humidity = "Humidity: %d" % tempSensor.relative_humidity
     pressure = "hPa pressure: %d" % baroSensor.pressure
     altitude = "Altitude: %d" % baroSensor.altitude
-    aq = airSensor.read()
-    aq_text = aq['pm10 env']
+    aq_dict = airSensor.read()
+    aq10 = "Dust: big - %d" % aq['pm10 env']
 
     t = strftime("%H:%M", time.localtime())
     ta = label.Label(font_small, text=t, color=0xaaaaaa)
@@ -85,7 +85,7 @@ while True:
     ta.scale = 1
     splash.append(ta)
 
-    t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude + "\n" + aq
+    t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude + "\n" + aq10
     ta = label.Label(font_small, text=t, color=0xffffff)
     ta.x = 40
     ta.y = 80
