@@ -75,7 +75,8 @@ while True:
     humidity = "Humidity: %d" % tempSensor.relative_humidity
     pressure = "hPa pressure: %d" % baroSensor.pressure
     altitude = "Altitude: %d" % baroSensor.altitude
-    aq = "Air quality: %d" % airSensor.read()
+    aq = airSensor.read()
+    aq_text = aq['pm10 env']
 
     t = strftime("%H:%M", time.localtime())
     ta = label.Label(font_small, text=t, color=0xaaaaaa)
