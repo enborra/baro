@@ -11,6 +11,7 @@ from adafruit_rgb_display import color565
 from adafruit_display_text import label
 from adafruit_bitmap_font import bitmap_font
 import adafruit_ahtx0
+import adafruit_bmp280
 
 
 i2c = board.I2C()  # uses board.SCL and board.SDA
