@@ -115,4 +115,4 @@ while True:
     # display.show(text_area)
     # display.show(text_area_time)
 
-    time.sleep(60)
+    time.sleep(30)
