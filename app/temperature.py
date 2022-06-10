@@ -104,9 +104,7 @@ while True:
 
         aq = airSensor.read()
 
-        t = "Air quality: "
-        t += "\n"
-        t += "pm1: %d" % aq['pm10 standard']
+        t = "pm1: %d" % aq['pm10 standard']
         t += "\n"
         t += "pm2.5: %d" % aq['pm25 standard']
         t += "\n"
