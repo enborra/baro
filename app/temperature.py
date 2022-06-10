@@ -69,28 +69,22 @@ while True:
 
     temp = "Temp: %d°F" % ((tempSensor.temperature*1.8)+32)
     humidity = "Humidity: %d" % tempSensor.relative_humidity
-    barometric = "Barometric: %d" % baroSensor.pressure
+    pressure = "Barometric: %d" % baroSensor.pressure
+    altitude = "Altitude: %d" % baroSensor.altitude
 
-    text = temp + "\n" + humidity
-    text_area = label.Label(font_large, text=text, color=0xffffff)
-    text_area.x = 40
-    text_area.y = 80
-    text_area.scale = 1
-    splash.append(text_area)
+    t = strftime("%H:%M", time.localtime())
+    ta = label.Label(font_small, text=text, color=0xaaaaaa)
+    ta.x = 15
+    ta.y = 15
+    ta.scale = 1
+    splash.append(ta)
 
-    text = strftime("%H:%M", time.localtime())
-    text_area_time = label.Label(font_small, text=text, color=0xaaaaaa)
-    text_area_time.x = 15
-    text_area_time.y = 15
-    text_area.scale = 1
-    splash.append(text_area_time)
-
-    text = barometric
-    text_area_baro = label.Label(font_small, text=text, color=0xaaaaaa)
-    text_area_baro.x = 15
-    text_area_baro.y = 200
-    text_area.scale = 1
-    splash.append(text_area_baro)
+    t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude
+    ta = label.Label(font_small, text=text, color=0xffffff)
+    ta.x = 40
+    ta.y = 80
+    ta.scale = 1
+    splash.append(ta)
 
     # display.show(text_area)
     # display.show(text_area_time)
