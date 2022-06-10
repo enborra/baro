@@ -22,7 +22,7 @@ tempSensor = adafruit_ahtx0.AHTx0(i2c)
 baroSensor = adafruit_bmp280.Adafruit_BMP280_I2C(i2c)
 baroSensor.sea_level_pressure = 1013.25 # change this to match the location's pressure (hPa) at sea level
 
-airSensor = PM25_I2C(i2c, reset_pin)
+airSensor = PM25_I2C(i2c, None)
 
 
 
