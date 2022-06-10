@@ -59,8 +59,6 @@ display.show(splash)
 font_large = bitmap_font.load_font("fonts/futura-medium-35.bdf")
 font_small = bitmap_font.load_font("fonts/futura-medium-20.bdf")
 
-time.sleep(10)
-
 while True:
     color_bitmap = displayio.Bitmap(320, 240, 1)
     color_palette = displayio.Palette(1)
