@@ -66,26 +66,25 @@ font_small = bitmap_font.load_font("fonts/futura-medium-20.bdf")
 cycle = True
 cycle_count = 0
 
-temp = ''
-humidity = ''
-pressure = ''
-altitude = ''
-aq = None
+sensorData = None
 
 def refreshData():
-    try:
-        temp = "Temp: %0.1f°F" % ((tempSensor.temperature*1.8)+32)
-        humidity = "Humidity: %d" % tempSensor.relative_humidity
-        pressure = "Pressure: %0.1f hPa" % baroSensor.pressure
-        altitude = "Altitude: %d" % baroSensor.altitude
+    o = {}
 
-        aq = airSensor.read()
+    try:
+        o['temp'] = "Temp: %0.1f°F" % ((tempSensor.temperature*1.8)+32)
+        o['humidity'] = "Humidity: %d" % tempSensor.relative_humidity
+        o['pressure'] = "Pressure: %0.1f hPa" % baroSensor.pressure
+        o['altitude'] = "Altitude: %d" % baroSensor.altitude
+
+        o['aq'] = airSensor.read()
 
     except e as Exception:
         print(e)
 
-time.sleep(5)
-refreshData()
+    return o
+
+sensorData = refreshData()
 
 
 while True:
@@ -103,12 +102,12 @@ while True:
     splash.append(ta)
 
     if cycle_count > 3:
-        refreshData()
+        sensorData = refreshData()
         cycle_count = 0
 
 
     if (cycle_count % 2) == 0:
-        t = 'Barometric pressure: \n' + temp + "\n" + humidity + "\n" + pressure + "\n" + altitude
+        t = 'Barometric pressure: \n' + o['temp'] + "\n" + o['humidity'] + "\n" + o['pressure'] + "\n" + o['altitude']
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
         ta.y = 80
@@ -123,12 +122,12 @@ while True:
         ta.scale = 1
         splash.append(ta)
 
-        if aq:
-            t = "Small dust: %d" % aq['pm10 env']
+        if o['aq']:
+            t = "Small dust: %d" % o['aq']['pm10 env']
             t += "\n"
-            t += "Medium dust: %d" % aq['pm25 env']
+            t += "Medium dust: %d" % o['aq']['pm25 env']
             t += "\n"
-            t += "Big dust: %d" % aq['pm100 env']
+            t += "Big dust: %d" % o['aq']['pm100 env']
 
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
