@@ -131,4 +131,5 @@ while True:
     # display.show(text_area)
     # display.show(text_area_time)
 
+    cycle_count += 1
     time.sleep(20)
