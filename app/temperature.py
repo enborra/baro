@@ -116,7 +116,7 @@ while True:
         splash.append(ta)
 
     else:
-        t = "Air Quality" + cycle_count
+        t = "Air Quality %f" % cycle_count
         ta = label.Label(font_large, text=t, color=0xffffff)
         ta.x = 40
         ta.y = 80
