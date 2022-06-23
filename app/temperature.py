@@ -70,6 +70,7 @@ temp = ''
 humidity = ''
 pressure = ''
 altitude = ''
+aq = None
 
 def refreshData():
     try:
@@ -77,10 +78,14 @@ def refreshData():
         humidity = "Humidity: %d" % tempSensor.relative_humidity
         pressure = "Pressure: %0.1f hPa" % baroSensor.pressure
         altitude = "Altitude: %d" % baroSensor.altitude
+
+        aq = airSensor.read()
+
     except:
         pass
 
 refreshData()
+
 
 while True:
     color_bitmap = displayio.Bitmap(320, 240, 1)
@@ -117,8 +122,6 @@ while True:
         ta.scale = 1
         splash.append(ta)
 
-        aq = airSensor.read()
-
         t = "Small dust: %d" % aq['pm10 env']
         t += "\n"
         t += "Medium dust: %d" % aq['pm25 env']
@@ -134,5 +137,5 @@ while True:
     # display.show(text_area)
     # display.show(text_area_time)
 
-    cycle_count += 1
+    cycle_count = cycle_count + 1
     time.sleep(5)
