@@ -84,6 +84,7 @@ def refreshData():
     except:
         pass
 
+time.sleep(5)
 refreshData()
 
 
