@@ -124,5 +124,8 @@ while True:
         ta.scale = 1
         splash.append(ta)
 
+    # display.show(text_area)
+    # display.show(text_area_time)
+
     cycle_count += 1
-    time.sleep(10)
+    time.sleep(5)
