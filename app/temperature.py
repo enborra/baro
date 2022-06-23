@@ -64,6 +64,12 @@ display.show(splash)
 font_large = bitmap_font.load_font("fonts/futura-medium-35.bdf")
 font_small = bitmap_font.load_font("fonts/futura-medium-20.bdf")
 cycle = True
+cycle_count = 0
+
+temp = ''
+humidity = ''
+pressurre = ''
+altitude = ''
 
 while True:
     color_bitmap = displayio.Bitmap(320, 240, 1)
@@ -79,12 +85,16 @@ while True:
     ta.scale = 1
     splash.append(ta)
 
-    if cycle:
+    if cycle_count > 10:
         temp = "Temp: %0.1f°F" % ((tempSensor.temperature*1.8)+32)
         humidity = "Humidity: %d" % tempSensor.relative_humidity
         pressure = "Pressure: %0.1f hPa" % baroSensor.pressure
         altitude = "Altitude: %d" % baroSensor.altitude
 
+        cycle_count = 0
+
+
+    if (cycle % 2) == 0:
         t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
@@ -121,4 +131,4 @@ while True:
     # display.show(text_area)
     # display.show(text_area_time)
 
-    time.sleep(60)
+    time.sleep(20)
