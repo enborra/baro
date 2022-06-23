@@ -102,7 +102,7 @@ while True:
 
 
     if (cycle_count % 2) == 0:
-        t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude
+        t = 'Barometric pressure: \n' + temp + "\n" + humidity + "\n" + pressure + "\n" + altitude
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
         ta.y = 80
