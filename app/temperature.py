@@ -86,10 +86,13 @@ while True:
     splash.append(ta)
 
     if cycle_count > 10:
-        temp = "Temp: %0.1f°F" % ((tempSensor.temperature*1.8)+32)
-        humidity = "Humidity: %d" % tempSensor.relative_humidity
-        pressure = "Pressure: %0.1f hPa" % baroSensor.pressure
-        altitude = "Altitude: %d" % baroSensor.altitude
+        try:
+            temp = "Temp: %0.1f°F" % ((tempSensor.temperature*1.8)+32)
+            humidity = "Humidity: %d" % tempSensor.relative_humidity
+            pressure = "Pressure: %0.1f hPa" % baroSensor.pressure
+            altitude = "Altitude: %d" % baroSensor.altitude
+        except:
+            pass
 
         cycle_count = 0
 
