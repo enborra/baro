@@ -102,7 +102,7 @@ while True:
     ta.scale = 1
     splash.append(ta)
 
-    if cycle_count > 10:
+    if cycle_count > 3:
         refreshData()
         cycle_count = 0
 
