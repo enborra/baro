@@ -94,15 +94,13 @@ while True:
         cycle_count = 0
 
 
-    if (cycle % 2) == 0:
+    if (cycle_count % 2) == 0:
         t = temp + "\n" + humidity + "\n" + pressure + "\n" + altitude
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
         ta.y = 80
         ta.scale = 1
         splash.append(ta)
-
-        cycle = False
 
     else:
         t = "Air Quality"
@@ -125,11 +123,6 @@ while True:
         ta.y = 120
         ta.scale = 1
         splash.append(ta)
-
-        cycle = True
-
-    # display.show(text_area)
-    # display.show(text_area_time)
 
     cycle_count += 1
     time.sleep(20)
