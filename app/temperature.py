@@ -122,11 +122,12 @@ while True:
         ta.scale = 1
         splash.append(ta)
 
-        t = "Small dust: %d" % aq['pm10 env']
-        t += "\n"
-        t += "Medium dust: %d" % aq['pm25 env']
-        t += "\n"
-        t += "Big dust: %d" % aq['pm100 env']
+        if aq:
+            t = "Small dust: %d" % aq['pm10 env']
+            t += "\n"
+            t += "Medium dust: %d" % aq['pm25 env']
+            t += "\n"
+            t += "Big dust: %d" % aq['pm100 env']
 
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
