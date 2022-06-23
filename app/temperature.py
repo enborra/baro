@@ -101,7 +101,7 @@ while True:
     ta.scale = 1
     splash.append(ta)
 
-    if cycle_count > 3:
+    if cycle_count > 10:
         sensorData = refreshData()
         cycle_count = 0
 
@@ -115,7 +115,7 @@ while True:
         splash.append(ta)
 
     else:
-        t = "Air Quality %f" % cycle_count
+        t = "Air Quality"
         ta = label.Label(font_large, text=t, color=0xffffff)
         ta.x = 40
         ta.y = 80
