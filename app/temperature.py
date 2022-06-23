@@ -81,8 +81,8 @@ def refreshData():
 
         aq = airSensor.read()
 
-    except:
-        pass
+    except e as Exception:
+        print(e)
 
 time.sleep(5)
 refreshData()
