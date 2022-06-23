@@ -71,6 +71,17 @@ humidity = ''
 pressure = ''
 altitude = ''
 
+def refreshData():
+    try:
+        temp = "Temp: %0.1f°F" % ((tempSensor.temperature*1.8)+32)
+        humidity = "Humidity: %d" % tempSensor.relative_humidity
+        pressure = "Pressure: %0.1f hPa" % baroSensor.pressure
+        altitude = "Altitude: %d" % baroSensor.altitude
+    except:
+        pass
+
+refreshData()
+
 while True:
     color_bitmap = displayio.Bitmap(320, 240, 1)
     color_palette = displayio.Palette(1)
@@ -86,14 +97,7 @@ while True:
     splash.append(ta)
 
     if cycle_count > 10:
-        try:
-            temp = "Temp: %0.1f°F" % ((tempSensor.temperature*1.8)+32)
-            humidity = "Humidity: %d" % tempSensor.relative_humidity
-            pressure = "Pressure: %0.1f hPa" % baroSensor.pressure
-            altitude = "Altitude: %d" % baroSensor.altitude
-        except:
-            pass
-
+        refreshData()
         cycle_count = 0
 
 
