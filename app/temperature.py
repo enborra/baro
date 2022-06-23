@@ -123,11 +123,11 @@ while True:
         splash.append(ta)
 
         if sensorData['aq']:
-            t = "Small dust: %d" % o['aq']['pm10 env']
+            t = "Small dust: %d" % sensorData['aq']['pm10 env']
             t += "\n"
-            t += "Medium dust: %d" % o['aq']['pm25 env']
+            t += "Medium dust: %d" % sensorData['aq']['pm25 env']
             t += "\n"
-            t += "Big dust: %d" % o['aq']['pm100 env']
+            t += "Big dust: %d" % sensorData['aq']['pm100 env']
 
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
