@@ -107,7 +107,7 @@ while True:
 
 
     if (cycle_count % 2) == 0:
-        t = 'Barometric pressure: \n' + sensorData['temp'] + "\n" + sensorData['humidity'] + "\n" + sensorData['pressure'] + "\n" + sensorData['altitude']
+        t = sensorData['temp'] + "\n" + sensorData['humidity'] + "\n" + sensorData['pressure'] + "\n" + sensorData['altitude']
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
         ta.y = 80
