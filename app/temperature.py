@@ -68,7 +68,7 @@ cycle_count = 0
 
 temp = ''
 humidity = ''
-pressurre = ''
+pressure = ''
 altitude = ''
 
 while True:
