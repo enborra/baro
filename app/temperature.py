@@ -125,4 +125,4 @@ while True:
         splash.append(ta)
 
     cycle_count += 1
-    time.sleep(20)
+    time.sleep(10)
