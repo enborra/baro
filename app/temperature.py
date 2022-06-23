@@ -107,7 +107,7 @@ while True:
 
 
     if (cycle_count % 2) == 0:
-        t = 'Barometric pressure: \n' + o['temp'] + "\n" + o['humidity'] + "\n" + o['pressure'] + "\n" + o['altitude']
+        t = 'Barometric pressure: \n' + sensorData['temp'] + "\n" + sensorData['humidity'] + "\n" + sensorData['pressure'] + "\n" + sensorData['altitude']
         ta = label.Label(font_small, text=t, color=0xffffff)
         ta.x = 40
         ta.y = 80
@@ -122,7 +122,7 @@ while True:
         ta.scale = 1
         splash.append(ta)
 
-        if o['aq']:
+        if sensorData['aq']:
             t = "Small dust: %d" % o['aq']['pm10 env']
             t += "\n"
             t += "Medium dust: %d" % o['aq']['pm25 env']
