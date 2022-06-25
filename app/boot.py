@@ -92,7 +92,7 @@ if __name__ == "__main__":
             cycle_count = cycle_count + 1
 
         except KeyboardInterrupt:
-            sys.exit()
+            sys.exit(0)
 
         except:
             pass
