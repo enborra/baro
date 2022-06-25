@@ -101,7 +101,7 @@ if __name__ == "__main__":
             body_text += ('\nMedium dust: %d' % d.getStat('air_quality_medium'))
             body_text += ('\nBig dust: %d' % d.getStat('air_quality_large'))
 
-        title_text_el = label.Label(font_large, text=title_text, color=0xffffff)
+        title_text_el = label.Label(font_small, text=title_text, color=0xffffff)
         title_text_el.x = 40
         title_text_el.y = 80
         title_text_el.scale = 1
