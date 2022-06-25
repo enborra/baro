@@ -16,7 +16,6 @@ from models.Detector import Detector
 
 
 def keyboardHandler(signum, frame):
-    print('Exiting..')
     sys.exit(0)
 
 signal.signal(signal.SIGINT, keyboardHandler)
