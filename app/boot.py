@@ -1,3 +1,4 @@
+import signal
 import sys
 import time
 from time import strftime
@@ -13,6 +14,11 @@ from adafruit_bitmap_font import bitmap_font
 
 from models.Detector import Detector
 
+
+def keyboardHandler(signum, frame):
+    sys.exit(0)
+
+signal.signal(signal.SIGINT, keyboardHandler)
 
 if __name__ == "__main__":
     d = Detector()
@@ -42,6 +48,8 @@ if __name__ == "__main__":
     font_small = bitmap_font.load_font("fonts/futura-medium-20.bdf")
     cycle = True
     cycle_count = 0
+
+    signal.signal
 
     while True:
         time.sleep(3)
@@ -90,9 +98,6 @@ if __name__ == "__main__":
             splash.append(time_text_el)
 
             cycle_count = cycle_count + 1
-
-        except KeyboardInterrupt:
-            sys.exit(0)
 
         except:
             pass
