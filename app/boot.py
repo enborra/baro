@@ -1,3 +1,4 @@
+import sys
 import time
 from time import strftime
 from datetime import date
@@ -23,20 +24,8 @@ if __name__ == "__main__":
     tft_cs = board.CE0
     tft_dc = board.D25
 
-    display_bus = displayio.FourWire(
-        spi,
-        command=tft_dc,
-        chip_select=tft_cs,
-        reset=board.D6
-    )
-
-    display = adafruit_ili9341.ILI9341(
-        display_bus,
-        width=320,
-        height=240,
-        rotation=180
-    )
-
+    display_bus = displayio.FourWire( spi, command=tft_dc, chip_select=tft_cs, reset=board.D6 )
+    display = adafruit_ili9341.ILI9341( display_bus, width=320, height=240, rotation=180 )
     splash = displayio.Group()
 
     # Blank the screen
@@ -71,14 +60,12 @@ if __name__ == "__main__":
 
             if (cycle_count % 2) == 0:
                 title_text = "Temp"
-
                 body_text = ('Temp: %0.0f°F' % d.getStat('temp'))
                 body_text += ('\nHumidity: %d' % d.getStat('humidity'))
                 body_text += ('\nBarometric: %d' % d.getStat('barometric_pressure'))
 
             else:
                 title_text = "Air"
-
                 body_text = ("Small dust: %d" % d.getStat('air_quality_small'))
                 body_text += ('\nMedium dust: %d' % d.getStat('air_quality_medium'))
                 body_text += ('\nBig dust: %d' % d.getStat('air_quality_large'))
@@ -102,10 +89,10 @@ if __name__ == "__main__":
             time_text_el.scale = 1
             splash.append(time_text_el)
 
-            # display.show(text_area)
-            # display.show(text_area_time)
-
             cycle_count = cycle_count + 1
+
+        except KeyboardInterrupt:
+            sys.exit()
 
         except:
             pass
