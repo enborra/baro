@@ -55,7 +55,7 @@ if __name__ == "__main__":
     cycle_count = 0
 
     while True:
-        time.sleep(2)
+        time.sleep(3)
 
         try:
             color_bitmap = displayio.Bitmap(320, 240, 1)
