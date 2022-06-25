@@ -95,7 +95,7 @@ if __name__ == "__main__":
 
 
         if (cycle_count % 2) == 0:
-            t = ('Temp: %0.0f'°F' % d.getStat('temp'))
+            t = ('Temp: %0.0f°F' % d.getStat('temp'))
             t += ('Humidity: %d' % d.getStat('humidity'))
             t += ('Barometric: %d' % d.getStat('barometric_pressure'))
             t += ('Altitude: %d' % d.getStat('altitude'))
