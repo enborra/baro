@@ -75,52 +75,56 @@ if __name__ == "__main__":
 
 
     while True:
-        color_bitmap = displayio.Bitmap(320, 240, 1)
-        color_palette = displayio.Palette(1)
-        color_palette[0] = 0x000000
-        bg_sprite = displayio.TileGrid(color_bitmap, x=0, y=0, pixel_shader=color_palette)
-        splash.append(bg_sprite)
+        try:
+            color_bitmap = displayio.Bitmap(320, 240, 1)
+            color_palette = displayio.Palette(1)
+            color_palette[0] = 0x000000
+            bg_sprite = displayio.TileGrid(color_bitmap, x=0, y=0, pixel_shader=color_palette)
+            splash.append(bg_sprite)
 
 
-        if cycle_count > 10:
-            d.refresh()
-            cycle_count = 0
+            if cycle_count > 10:
+                d.refresh()
+                cycle_count = 0
 
-        if (cycle_count % 2) == 0:
-            title_text = "Temp"
+            if (cycle_count % 2) == 0:
+                title_text = "Temp"
 
-            body_text = ('Temp: %0.0f°F' % d.getStat('temp'))
-            body_text += ('\nHumidity: %d' % d.getStat('humidity'))
-            body_text += ('\nBarometric: %d' % d.getStat('barometric_pressure'))
+                body_text = ('Temp: %0.0f°F' % d.getStat('temp'))
+                body_text += ('\nHumidity: %d' % d.getStat('humidity'))
+                body_text += ('\nBarometric: %d' % d.getStat('barometric_pressure'))
 
-        else:
-            title_text = "Air"
+            else:
+                title_text = "Air"
 
-            body_text = ("Small dust: %d" % d.getStat('air_quality_small'))
-            body_text += ('\nMedium dust: %d' % d.getStat('air_quality_medium'))
-            body_text += ('\nBig dust: %d' % d.getStat('air_quality_large'))
+                body_text = ("Small dust: %d" % d.getStat('air_quality_small'))
+                body_text += ('\nMedium dust: %d' % d.getStat('air_quality_medium'))
+                body_text += ('\nBig dust: %d' % d.getStat('air_quality_large'))
 
-        title_text_el = label.Label(font_large, text=title_text, color=0xffffff)
-        title_text_el.x = 40
-        title_text_el.y = 70
-        title_text_el.scale = 1
-        splash.append(title_text_el)
+            title_text_el = label.Label(font_large, text=title_text, color=0xffffff)
+            title_text_el.x = 40
+            title_text_el.y = 70
+            title_text_el.scale = 1
+            splash.append(title_text_el)
 
-        body_text_el = label.Label(font_small, text=body_text, color=0xffffff)
-        body_text_el.x = 40
-        body_text_el.y = 130
-        body_text_el.scale = 1
-        splash.append(body_text_el)
+            body_text_el = label.Label(font_small, text=body_text, color=0xffffff)
+            body_text_el.x = 40
+            body_text_el.y = 130
+            body_text_el.scale = 1
+            splash.append(body_text_el)
 
-        time_text = strftime("%H:%M", time.localtime())
-        time_text_el = label.Label(font_small, text=time_text, color=0xaaaaaa)
-        time_text_el.x = 15
-        time_text_el.y = 15
-        time_text_el.scale = 1
-        splash.append(time_text_el)
+            time_text = strftime("%H:%M", time.localtime())
+            time_text_el = label.Label(font_small, text=time_text, color=0xaaaaaa)
+            time_text_el.x = 15
+            time_text_el.y = 15
+            time_text_el.scale = 1
+            splash.append(time_text_el)
 
-        # display.show(text_area)
-        # display.show(text_area_time)
+            # display.show(text_area)
+            # display.show(text_area_time)
 
-        cycle_count = cycle_count + 1
-        time.sleep(2)
+            cycle_count = cycle_count + 1
+            time.sleep(2)
+
+        except:
+            pass
