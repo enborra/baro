@@ -15,7 +15,7 @@ import adafruit_bmp280
 from adafruit_pm25.i2c import PM25_I2C
 
 
-from models.detector import Detector
+from models.Detector import Detector
 
 
 
