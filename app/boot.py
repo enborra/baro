@@ -93,7 +93,6 @@ if __name__ == "__main__":
             body_text = ('Temp: %0.0f°F' % d.getStat('temp'))
             body_text += ('\nHumidity: %d' % d.getStat('humidity'))
             body_text += ('\nBarometric: %d' % d.getStat('barometric_pressure'))
-            body_text += ('\nAltitude: %d' % d.getStat('altitude'))
 
         else:
             title_text = "Air Quality"
