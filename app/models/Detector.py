@@ -53,8 +53,13 @@ class Detector():
 
 
     def getStat(self, *args, **kwargs):
+        s = kwargs.get('stat', None)
+        o = None
 
-        pass
+        if s:
+            o = self._data[s]
+
+        return o
 
     def getDump(self, *args, **kwargs):
         o = {}
