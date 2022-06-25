@@ -125,4 +125,4 @@ if __name__ == "__main__":
         # display.show(text_area_time)
 
         cycle_count = cycle_count + 1
-        time.sleep(5)
+        time.sleep(2)
