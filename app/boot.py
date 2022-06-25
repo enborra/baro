@@ -1,7 +1,10 @@
 import time
+from time import strftime
+import board
 import displayio
 
 from models.Detector import Detector
+
 
 
 if __name__ == "__main__":
