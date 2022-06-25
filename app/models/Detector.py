@@ -39,7 +39,7 @@ class Detector():
         self.airSensor = PM25_I2C( self.i2c, None )
 
     def refresh(self, *args, **kwargs):
-        self._data['temp'] = (self.tempSensor.temperature.temperature*1.8)+32
+        self._data['temp'] = (self.tempSensor.temperature*1.8)+32
         self._data['humidity'] = self.tempSensor.relative_humidity
 
         self._data['barometric_pressure'] = self.baroSensor.pressure
