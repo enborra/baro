@@ -15,6 +15,9 @@ import adafruit_bmp280
 from adafruit_pm25.i2c import PM25_I2C
 
 
+from models.detector import Detector
+
+
 i2c = board.I2C()  # uses board.SCL and board.SDA
 
 tempSensor = adafruit_ahtx0.AHTx0(i2c)
