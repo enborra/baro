@@ -91,7 +91,6 @@ if __name__ == "__main__":
 
         if cycle_count > 10:
             d.refresh()
-            sensorData = d.getDump()
             cycle_count = 0
 
 
