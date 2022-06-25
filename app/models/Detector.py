@@ -44,7 +44,7 @@ class Detector():
 
             o['aq'] = airSensor.read()
 
-        except e as Exception:
+        except Exception as e:
             print(e)
 
         return o
