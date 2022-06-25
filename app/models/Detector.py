@@ -65,9 +65,9 @@ class Detector():
             o['pressure'] = "Pressure: %0.1f hPa" % self._data['barometric_pressure']
             o['altitude'] = "Altitude: %d" % self._data['altitude']
             o['aq'] = {
-                'pmv10 env': self._data['air_quality_small'],
-                'pmv25 env': self._data['air_quality_medium'],
-                'pmv100 env': self._data['air_quality_large']
+                'pm10 env': self._data['air_quality_small'],
+                'pm25 env': self._data['air_quality_medium'],
+                'pm100 env': self._data['air_quality_large']
             }
 
         except Exception as e:
