@@ -103,12 +103,12 @@ if __name__ == "__main__":
 
         title_text_el = label.Label(font_large, text=title_text, color=0xffffff)
         title_text_el.x = 40
-        title_text_el.y = 60
+        title_text_el.y = 70
         title_text_el.scale = 1
         splash.append(title_text_el)
 
         body_text_el = label.Label(font_small, text=body_text, color=0xffffff)
-        body_text_el.x = 40
+        body_text_el.x = 50
         body_text_el.y = 120
         body_text_el.scale = 1
         splash.append(body_text_el)
