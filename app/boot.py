@@ -20,19 +20,8 @@ from models.Detector import Detector
 
 
 if __name__ == "__main__":
-    # i2c = board.I2C()  # uses board.SCL and board.SDA
-
-    # tempSensor = adafruit_ahtx0.AHTx0(i2c)
-    #
-    # baroSensor = adafruit_bmp280.Adafruit_BMP280_I2C(i2c)
-    # baroSensor.sea_level_pressure = 1013.25 # change this to match the location's pressure (hPa) at sea level
-    #
-    # airSensor = PM25_I2C(i2c, None)
-
-
     d = Detector()
-
-
+    d.refresh()
 
     displayio.release_displays()
 
@@ -70,9 +59,6 @@ if __name__ == "__main__":
     font_small = bitmap_font.load_font("fonts/futura-medium-20.bdf")
     cycle = True
     cycle_count = 0
-
-    d.refresh()
-
 
     while True:
         time.sleep(2)
