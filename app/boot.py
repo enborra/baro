@@ -88,20 +88,20 @@ if __name__ == "__main__":
             cycle_count = 0
 
         if (cycle_count % 2) == 0:
-            title_text = "Temperature"
+            title_text = "Temp"
 
             body_text = ('Temp: %0.0f°F' % d.getStat('temp'))
             body_text += ('\nHumidity: %d' % d.getStat('humidity'))
             body_text += ('\nBarometric: %d' % d.getStat('barometric_pressure'))
 
         else:
-            title_text = "Air Quality"
+            title_text = "Air"
 
             body_text = ("Small dust: %d" % d.getStat('air_quality_small'))
             body_text += ('\nMedium dust: %d' % d.getStat('air_quality_medium'))
             body_text += ('\nBig dust: %d' % d.getStat('air_quality_large'))
 
-        title_text_el = label.Label(font_small, text=title_text, color=0xffffff)
+        title_text_el = label.Label(font_large, text=title_text, color=0xffffff)
         title_text_el.x = 40
         title_text_el.y = 80
         title_text_el.scale = 1
