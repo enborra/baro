@@ -72,7 +72,6 @@ if __name__ == "__main__":
     cycle_count = 0
 
     d.refresh()
-    sensorData = d.getDump()
 
 
     while True:

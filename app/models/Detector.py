@@ -59,22 +59,3 @@ class Detector():
             o = self._data[ str(stat) ]
 
         return o
-
-    def getDump(self, *args, **kwargs):
-        o = {}
-
-        try:
-            o['temp'] = "Temp: %0.1f°F" % self._data['temp']
-            o['humidity'] = "Humidity: %d" % self._data['humidity']
-            o['pressure'] = "Pressure: %0.1f hPa" % self._data['barometric_pressure']
-            o['altitude'] = "Altitude: %d" % self._data['altitude']
-            o['aq'] = {
-                'pm10 env': self._data['air_quality_small'],
-                'pm25 env': self._data['air_quality_medium'],
-                'pm100 env': self._data['air_quality_large']
-            }
-
-        except Exception as e:
-            print(e)
-
-        return o
