@@ -115,7 +115,9 @@ if __name__ == "__main__":
             splash.append(ta)
 
             if sensorData['aq']:
-                t = ("Small dust: %d\n Medium dust: %d\n Big dust: %d" % (d.getStat('air_quality_small'), d.getStat('air_quality_medium'), d.getStat('air_quality_large')) )
+                t = ("Small dust: %d" % d.getStat('air_quality_small'))
+                t += ('\nMedium dust: %d' % d.getStat('air_quality_medium'))
+                t += ('\nBig dust: %d' % d.getStat('air_quality_large'))
 
             ta = label.Label(font_small, text=t, color=0xffffff)
             ta.x = 40
