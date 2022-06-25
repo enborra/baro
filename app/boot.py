@@ -20,17 +20,17 @@ from models import Detector
 
 
 if __name__ == "__main__":
-    i2c = board.I2C()  # uses board.SCL and board.SDA
+    # i2c = board.I2C()  # uses board.SCL and board.SDA
 
-    tempSensor = adafruit_ahtx0.AHTx0(i2c)
+    # tempSensor = adafruit_ahtx0.AHTx0(i2c)
+    #
+    # baroSensor = adafruit_bmp280.Adafruit_BMP280_I2C(i2c)
+    # baroSensor.sea_level_pressure = 1013.25 # change this to match the location's pressure (hPa) at sea level
+    #
+    # airSensor = PM25_I2C(i2c, None)
 
-    baroSensor = adafruit_bmp280.Adafruit_BMP280_I2C(i2c)
-    baroSensor.sea_level_pressure = 1013.25 # change this to match the location's pressure (hPa) at sea level
 
-    airSensor = PM25_I2C(i2c, None)
-
-
-
+    detector = Detector()
 
 
 
@@ -71,25 +71,7 @@ if __name__ == "__main__":
     cycle = True
     cycle_count = 0
 
-    sensorData = None
-
-    def refreshData():
-        o = {}
-
-        try:
-            o['temp'] = "Temp: %0.1f°F" % ((tempSensor.temperature*1.8)+32)
-            o['humidity'] = "Humidity: %d" % tempSensor.relative_humidity
-            o['pressure'] = "Pressure: %0.1f hPa" % baroSensor.pressure
-            o['altitude'] = "Altitude: %d" % baroSensor.altitude
-
-            o['aq'] = airSensor.read()
-
-        except e as Exception:
-            print(e)
-
-        return o
-
-    sensorData = refreshData()
+    sensorData = detector.getDump()
 
 
     while True:
@@ -107,7 +89,7 @@ if __name__ == "__main__":
         splash.append(ta)
 
         if cycle_count > 10:
-            sensorData = refreshData()
+            sensorData = detector.getDump()
             cycle_count = 0
 
 
