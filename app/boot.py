@@ -71,6 +71,7 @@ if __name__ == "__main__":
     cycle = True
     cycle_count = 0
 
+    d.refresh()
     sensorData = d.getDump()
 
 
@@ -89,6 +90,7 @@ if __name__ == "__main__":
         splash.append(ta)
 
         if cycle_count > 10:
+            d.refresh()
             sensorData = d.getDump()
             cycle_count = 0
 
