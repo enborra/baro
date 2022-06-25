@@ -108,8 +108,8 @@ if __name__ == "__main__":
         splash.append(title_text_el)
 
         body_text_el = label.Label(font_small, text=body_text, color=0xffffff)
-        body_text_el.x = 50
-        body_text_el.y = 120
+        body_text_el.x = 40
+        body_text_el.y = 130
         body_text_el.scale = 1
         splash.append(body_text_el)
 
