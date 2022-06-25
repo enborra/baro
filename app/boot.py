@@ -103,7 +103,7 @@ if __name__ == "__main__":
 
         title_text_el = label.Label(font_large, text=title_text, color=0xffffff)
         title_text_el.x = 40
-        title_text_el.y = 80
+        title_text_el.y = 60
         title_text_el.scale = 1
         splash.append(title_text_el)
 
