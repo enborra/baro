@@ -8,4 +8,5 @@ class Detector():
         pass
 
     def getStat(self, *args, **kwargs):
+
         pass
