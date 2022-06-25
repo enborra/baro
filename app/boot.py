@@ -82,48 +82,44 @@ if __name__ == "__main__":
         bg_sprite = displayio.TileGrid(color_bitmap, x=0, y=0, pixel_shader=color_palette)
         splash.append(bg_sprite)
 
-        t = strftime("%H:%M", time.localtime())
-        ta = label.Label(font_small, text=t, color=0xaaaaaa)
-        ta.x = 15
-        ta.y = 15
-        ta.scale = 1
-        splash.append(ta)
 
         if cycle_count > 10:
             d.refresh()
             cycle_count = 0
 
-
         if (cycle_count % 2) == 0:
-            t = ('Temp: %0.0f°F' % d.getStat('temp'))
-            t += ('\nHumidity: %d' % d.getStat('humidity'))
-            t += ('\nBarometric: %d' % d.getStat('barometric_pressure'))
-            t += ('\nAltitude: %d' % d.getStat('altitude'))
+            title_text = "Temperature"
 
-            ta = label.Label(font_small, text=t, color=0xffffff)
-            ta.x = 40
-            ta.y = 80
-            ta.scale = 1
-            splash.append(ta)
+            body_text = ('Temp: %0.0f°F' % d.getStat('temp'))
+            body_text += ('\nHumidity: %d' % d.getStat('humidity'))
+            body_text += ('\nBarometric: %d' % d.getStat('barometric_pressure'))
+            body_text += ('\nAltitude: %d' % d.getStat('altitude'))
 
         else:
-            t = "Air Quality"
-            ta = label.Label(font_large, text=t, color=0xffffff)
-            ta.x = 40
-            ta.y = 80
-            ta.scale = 1
-            splash.append(ta)
+            title_text = "Air Quality"
 
-            if sensorData['aq']:
-                t = ("Small dust: %d" % d.getStat('air_quality_small'))
-                t += ('\nMedium dust: %d' % d.getStat('air_quality_medium'))
-                t += ('\nBig dust: %d' % d.getStat('air_quality_large'))
+            body_text = ("Small dust: %d" % d.getStat('air_quality_small'))
+            body_text += ('\nMedium dust: %d' % d.getStat('air_quality_medium'))
+            body_text += ('\nBig dust: %d' % d.getStat('air_quality_large'))
 
-            ta = label.Label(font_small, text=t, color=0xffffff)
-            ta.x = 40
-            ta.y = 120
-            ta.scale = 1
-            splash.append(ta)
+        title_text_el = label.Label(font_large, text=title_text, color=0xffffff)
+        title_text_el.x = 40
+        title_text_el.y = 80
+        title_text_el.scale = 1
+        splash.append(title_text_el)
+
+        body_text_el = label.Label(font_small, text=body_text, color=0xffffff)
+        body_text_el.x = 40
+        body_text_el.y = 120
+        body_text_el.scale = 1
+        splash.append(body_text_el)
+
+        time_text = strftime("%H:%M", time.localtime())
+        time_text_el = label.Label(font_small, text=time_text, color=0xaaaaaa)
+        time_text_el.x = 15
+        time_text_el.y = 15
+        time_text_el.scale = 1
+        splash.append(time_text_el)
 
         # display.show(text_area)
         # display.show(text_area_time)
