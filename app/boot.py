@@ -30,7 +30,7 @@ if __name__ == "__main__":
     # airSensor = PM25_I2C(i2c, None)
 
 
-    detector = Detector()
+    d = Detector()
 
 
 
@@ -71,7 +71,7 @@ if __name__ == "__main__":
     cycle = True
     cycle_count = 0
 
-    sensorData = detector.getDump()
+    sensorData = d.getDump()
 
 
     while True:
@@ -89,7 +89,7 @@ if __name__ == "__main__":
         splash.append(ta)
 
         if cycle_count > 10:
-            sensorData = detector.getDump()
+            sensorData = d.getDump()
             cycle_count = 0
 
 
