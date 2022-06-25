@@ -52,12 +52,11 @@ class Detector():
         self._data['air_quality_large'] = aq['pm100 env']
 
 
-    def getStat(self, *args, **kwargs):
-        s = kwargs.get('stat', None)
+    def getStat(self, stat, *args, **kwargs):
         o = None
 
-        if s:
-            o = self._data[s]
+        if stat:
+            o = self._data[ str(stat) ]
 
         return o
 

@@ -96,7 +96,11 @@ if __name__ == "__main__":
 
 
         if (cycle_count % 2) == 0:
-            t = ('Temp: %0.0f°F' % d.getStat(stat='temp')) + "\n" + sensorData['humidity'] + "\n" + sensorData['pressure'] + "\n" + sensorData['altitude']
+            t = ('Temp: %0.0f°F' % d.getStat('temp'))
+                + "\n" + d.getStat('humidity')
+                + "\n" + d.getStat('barometric_pressure')
+                + "\n" + d.getStat('altitude')
+
             ta = label.Label(font_small, text=t, color=0xffffff)
             ta.x = 40
             ta.y = 80
