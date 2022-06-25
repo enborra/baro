@@ -60,11 +60,15 @@ class Detector():
         o = {}
 
         try:
-            o['temp'] = "Temp: %0.1f°F" % ((self.tempSensor.temperature*1.8)+32)
-            o['humidity'] = "Humidity: %d" % self.tempSensor.relative_humidity
-            o['pressure'] = "Pressure: %0.1f hPa" % self.baroSensor.pressure
-            o['altitude'] = "Altitude: %d" % self.baroSensor.altitude
-            o['aq'] = self.airSensor.read()
+            o['temp'] = "Temp: %0.1f°F" % self._data['temp']
+            o['humidity'] = "Humidity: %d" % self._data['humidity']
+            o['pressure'] = "Pressure: %0.1f hPa" % self._data['barometric_pressure']
+            o['altitude'] = "Altitude: %d" % self._data['altitude']
+            o['aq'] = {
+                'pmv10 env': self._data['air_quality_small'],
+                'pmv25 env': self._data['air_quality_medium'],
+                'pmv100 env': self._data['air_quality_large']
+            }
 
         except Exception as e:
             print(e)
