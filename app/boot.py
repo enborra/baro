@@ -75,6 +75,8 @@ if __name__ == "__main__":
 
 
     while True:
+        time.sleep(2)
+
         try:
             color_bitmap = displayio.Bitmap(320, 240, 1)
             color_palette = displayio.Palette(1)
@@ -124,7 +126,6 @@ if __name__ == "__main__":
             # display.show(text_area_time)
 
             cycle_count = cycle_count + 1
-            time.sleep(2)
 
         except:
-            time.sleep(5)
+            pass
