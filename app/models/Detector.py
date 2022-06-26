@@ -5,10 +5,6 @@ import calendar
 
 import board
 
-import adafruit_ili9341
-from adafruit_rgb_display import color565
-from adafruit_display_text import label
-from adafruit_bitmap_font import bitmap_font
 import adafruit_ahtx0
 import adafruit_bmp280
 from adafruit_pm25.i2c import PM25_I2C
