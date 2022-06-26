@@ -98,7 +98,9 @@ if __name__ == "__main__":
             splash.append(time_text_el)
 
             cycle_count = cycle_count + 1
+            print(cycle_count)
 
         except Exception as e:
             print(e)
-            sys.stdout.flush()
+
+        sys.stdout.flush()
