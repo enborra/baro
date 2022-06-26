@@ -52,6 +52,8 @@ if __name__ == "__main__":
     signal.signal
 
     while True:
+        time.sleep(3)
+
         try:
             color_bitmap = displayio.Bitmap(320, 240, 1)
             color_palette = displayio.Palette(1)
@@ -99,5 +101,3 @@ if __name__ == "__main__":
 
         except:
             pass
-
-        time.sleep(3)
