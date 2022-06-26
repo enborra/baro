@@ -53,7 +53,7 @@ if __name__ == "__main__":
     signal.signal
 
     while True:
-        time.sleep(3)
+        time.sleep(36)
 
         try:
             color_bitmap = displayio.Bitmap(320, 240, 1)
