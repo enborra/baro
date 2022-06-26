@@ -104,7 +104,6 @@ if __name__ == "__main__":
             splash.append(time_text_el)
 
             cycle_count = cycle_count + 1
-            print(str(cycle_count) + ' / ' + str(displayFace) )
 
         except Exception as e:
             print(e)
