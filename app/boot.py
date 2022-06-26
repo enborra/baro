@@ -99,5 +99,5 @@ if __name__ == "__main__":
 
             cycle_count = cycle_count + 1
 
-        except:
-            pass
+        except Exception as e:
+            print(e)
