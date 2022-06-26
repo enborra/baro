@@ -48,6 +48,7 @@ if __name__ == "__main__":
     font_small = bitmap_font.load_font("fonts/futura-medium-20.bdf")
     cycle = True
     cycle_count = 0
+    displayFace = 0
 
     signal.signal
 
@@ -66,17 +67,22 @@ if __name__ == "__main__":
                 d.refresh()
                 cycle_count = 0
 
-            if (cycle_count % 2) == 0:
+            if( displayFace == 0 ):
                 title_text = "Temp"
                 body_text = ('Temp: %0.0f°F' % d.getStat('temp'))
                 body_text += ('\nHumidity: %d' % d.getStat('humidity'))
                 body_text += ('\nBarometric: %d' % d.getStat('barometric_pressure'))
+                displayFace = 1
 
-            else:
+            elif( displayFace == 1 ):
                 title_text = "Air"
                 body_text = ("Small dust: %d" % d.getStat('air_quality_small'))
                 body_text += ('\nMedium dust: %d' % d.getStat('air_quality_medium'))
                 body_text += ('\nBig dust: %d' % d.getStat('air_quality_large'))
+                displayFace = 0
+
+            else:
+                displayFace = 0
 
             title_text_el = label.Label(font_large, text=title_text, color=0xffffff)
             title_text_el.x = 40
