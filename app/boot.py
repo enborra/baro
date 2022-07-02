@@ -13,7 +13,6 @@ import calendar
 # from adafruit_bitmap_font import bitmap_font
 
 from models.Detector import Detector
-from .app.models.HeadsUpDisplay import HeadsUpDisplay
 from models.HeadsUpDisplay import HeadsUpDisplay
 
 
