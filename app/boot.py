@@ -23,14 +23,14 @@ if __name__ == "__main__":
     cycle_count = 0
 
     while True:
-        time.sleep(3)
+        time.sleep(2)
 
         try:
             if cycle_count > 10:
                 d.refresh()
                 cycle_count = 0
 
-            elif cycle_count > 7:
+            elif cycle_count > 5:
                 title_text = "Temp"
                 body_text = ('Temp: %0.0f°F' % d.getStat('temp'))
                 body_text += ('\nHumidity: %d' % d.getStat('humidity'))
