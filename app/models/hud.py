@@ -13,9 +13,9 @@ from adafruit_bitmap_font import bitmap_font
 
 class Hud():
     _spi = None
-    _tft_cs = board.CE0
-    _tft_dc = board.D25
-    _tft_reset = board.D6
+    _tft_cs = None
+    _tft_dc = None
+    _tft_reset = None
     _displayBus = None
     _displayWidth = 320
     _displayHeight = 240
@@ -31,6 +31,10 @@ class Hud():
 
 
     def __init__(self, *args, **kwargs):
+        self._tft_cs = board.CE0
+        self._tft_dc = board.D25
+        self._tft_reset = board.D6
+
         displayio.release_displays()
 
         self._displayBus = displayio.FourWire( self._spi, command=self._tft_dc, chip_select=self._tft_cs, reset=self._tft_reset )
