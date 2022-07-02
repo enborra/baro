@@ -25,8 +25,7 @@ if __name__ == "__main__":
     d = Detector()
     d.refresh()
 
-    # hud = Thing()
-    # hud.show()
+    hud = HeadsUpDisplay()
 
     # displayio.release_displays()
     #
@@ -89,7 +88,7 @@ if __name__ == "__main__":
             else:
                 displayFace = 0
 
-            # hud.setText( title=title_text, body=body_text )
+            hud.setText( title=title_text, body=body_text )
 
             # txtTime.text = strftime("%H:%M", time.localtime())
             # txtTitle.text = title_text
