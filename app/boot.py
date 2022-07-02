@@ -49,8 +49,6 @@ if __name__ == "__main__":
     cycle_count = 0
     displayFace = 0
 
-    signal.signal
-
     # Create the ui components
 
     txtTitle = label.Label( font_large, text='', color=0xffffff, x=40, y=70, scale=1 )
