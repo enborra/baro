@@ -23,7 +23,7 @@ class HeadsUpDisplay():
     _displayRotation = 180
     _display = None
     _splash = None
-    _bg_sprite = None
+    _bgSprite = None
 
     _fontLarge = None
     _fontSmall = None
@@ -50,8 +50,8 @@ class HeadsUpDisplay():
         color_palette = displayio.Palette(1)
         color_palette[0] = 0x000000
 
-        self._bg_sprite = displayio.TileGrid(color_bitmap, x=0, y=0, pixel_shader=color_palette)
-        self._splash.append(bg_sprite)
+        self._bgSprite = displayio.TileGrid(color_bitmap, x=0, y=0, pixel_shader=color_palette)
+        self._splash.append(self._bgSprite)
         self._display.show(splash)
 
         _fontLarge = bitmap_font.load_font("fonts/futura-medium-35.bdf")
