@@ -11,7 +11,7 @@
 # from adafruit_bitmap_font import bitmap_font
 
 
-class Thing():
+class HeadsUpDisplay():
     # _spi = None
     # _tft_cs = None
     # _tft_dc = None
