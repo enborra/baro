@@ -1,3 +1,8 @@
+import time
+from time import strftime
+from datetime import date
+import calendar
+
 import board
 import displayio
 import adafruit_ili9341
