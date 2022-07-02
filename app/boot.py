@@ -38,7 +38,7 @@ if __name__ == "__main__":
                 cycle_count = 0
 
             if cycle_count == 1:
-                title_text = "Air"
+                title_text = "Air Quality"
                 body_text = ("Small dust: %d" % d.getStat('air_quality_small'))
                 body_text += ('\nMedium dust: %d' % d.getStat('air_quality_medium'))
                 body_text += ('\nBig dust: %d' % d.getStat('air_quality_large'))
