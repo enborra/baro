@@ -1,5 +1,5 @@
 # import time
-# from time import strftime
+from time import strftime
 # from datetime import date
 # import calendar
 
