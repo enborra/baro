@@ -60,13 +60,13 @@ class HeadsUpDisplay():
         # Create the ui components
 
         self._txtTitle = label.Label( self._fontLarge, text='', color=0xffffff, x=40, y=70, scale=1 )
-        splash.append( self._txtTitle )
+        self._splash.append( self._txtTitle )
 
         self._txtBody = label.Label( self._fontSmall, text='', color=0xffffff, x=40, y=130, scale=1 )
-        splash.append( self._txtBody )
+        self._splash.append( self._txtBody )
 
         self._txtTime = label.Label( self._fontSmall, text='', color=0xaaaaaa, x=15, y=15, scale=1 )
-        splash.append( self._txtTime )
+        self._splash.append( self._txtTime )
 
     def setText(self, *args, **kwargs):
         title_text = kwargs.get('title')
