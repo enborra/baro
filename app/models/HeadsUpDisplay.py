@@ -54,8 +54,8 @@ class HeadsUpDisplay():
         self._splash.append( self._bgSprite )
         self._display.show( self._splash )
 
-        _fontLarge = bitmap_font.load_font("../fonts/futura-medium-35.bdf")
-        _fontSmall = bitmap_font.load_font("../fonts/futura-medium-20.bdf")
+        _fontLarge = bitmap_font.load_font("/fonts/futura-medium-35.bdf")
+        _fontSmall = bitmap_font.load_font("/fonts/futura-medium-20.bdf")
 
         # Create the ui components
 
