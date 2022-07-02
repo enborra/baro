@@ -74,11 +74,10 @@ if __name__ == "__main__":
 
                 elif baroInches > 27:
                     title_text = 'Heavy rain'
-                    
+
                 else:
                     title_text = "Storm's comin."
 
-                title_text = "Feel"
                 body_text = ('Temp: %0.0f' % d.getStat('temp')) + '°F'
                 body_text += ('\nHumidity: %d' % d.getStat('humidity')) + '%'
                 body_text += ('\nBarometric: %d' % d.getStat('barometric_pressure_inches')) + 'in.'
