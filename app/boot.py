@@ -60,19 +60,19 @@ if __name__ == "__main__":
             else:
                 baroInches = d.getStat('barometric_pressure_inches')
 
-                if baroInches > 31:
+                if baroInches > 32:
                     title_text = 'Very dry.'
 
-                elif baroInches > 30:
+                elif baroInches > 31:
                     title_text = 'Dry.'
 
-                elif baroInches > 29:
+                elif baroInches > 30:
                     title_text = 'Overcast'
 
-                elif baroInches > 28:
+                elif baroInches > 29:
                     title_text = 'Rain'
 
-                elif baroInches > 27:
+                elif baroInches > 28:
                     title_text = 'Heavy rain'
 
                 else:
