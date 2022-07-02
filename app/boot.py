@@ -58,7 +58,8 @@ if __name__ == "__main__":
         font_large,
         text='',
         color=0xffffff,
-        anchored_position=(40,70),
+        x=40,
+        y=70,
         scale=1
     )
 
