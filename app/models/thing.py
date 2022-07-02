@@ -12,23 +12,23 @@ from adafruit_bitmap_font import bitmap_font
 
 
 class HeadsUpDisplay():
-    _spi = None
-    _tft_cs = None
-    _tft_dc = None
-    _tft_reset = None
-    _displayBus = None
-    _displayWidth = 320
-    _displayHeight = 240
-    _displayRotation = 180
-    _display = None
-    _splash = None
-    _bg_sprite = None
-    _fontLarge = None
-    _fontSmall = None
-    _txtTime = None
-    _txtTitle = None
-    _txtBody = None
-
+    # _spi = None
+    # _tft_cs = None
+    # _tft_dc = None
+    # _tft_reset = None
+    # _displayBus = None
+    # _displayWidth = 320
+    # _displayHeight = 240
+    # _displayRotation = 180
+    # _display = None
+    # _splash = None
+    # _bg_sprite = None
+    # _fontLarge = None
+    # _fontSmall = None
+    # _txtTime = None
+    # _txtTitle = None
+    # _txtBody = None
+    #
 
     def __init__(self, *args, **kwargs):
         pass
