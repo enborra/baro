@@ -13,7 +13,7 @@ import calendar
 # from adafruit_bitmap_font import bitmap_font
 
 from models.Detector import Detector
-from models.HeadsUpDisplay import HeadsUpDisplay
+from Models.HeadsUpDisplay import HeadsUpDisplay
 
 
 def keyboardHandler(signum, frame):
