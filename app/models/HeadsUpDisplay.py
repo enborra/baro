@@ -1,4 +1,4 @@
-# import time
+import time
 from time import strftime
 # from datetime import date
 # import calendar
