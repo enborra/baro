@@ -21,13 +21,17 @@ if __name__ == "__main__":
     hud = HeadsUpDisplay()
 
     cycle_count = 0
+    lastRefreshTime = time.time()
 
     while True:
         time.sleep(2)
 
         try:
-            if cycle_count > 10:
+            if time.time() > lastRefreshTime + 10
+                print("updating sensors")
                 d.refresh()
+
+            if cycle_count > 10:
                 cycle_count = 0
 
             elif cycle_count > 5:
