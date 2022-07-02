@@ -74,7 +74,7 @@ if __name__ == "__main__":
     splash.append(elTimeText)
 
     while True:
-        time.sleep(36)
+        time.sleep(3)
 
         try:
             # color_bitmap = displayio.Bitmap(320, 240, 1)
