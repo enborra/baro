@@ -132,12 +132,12 @@ class Detector():
         pmSmall = self._data['air_quality_small']
 
         if pmLarge < 50:
-            output += 'Clear air'
+            output += 'Clean air'
 
         elif pmLarge <200:
-            output += 'Unhealthy air'
+            output += 'Kinda dirty air'
 
         else:
-            output += 'Bad air'
+            output += 'Really bad air'
 
         return output
