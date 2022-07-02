@@ -27,15 +27,11 @@ from adafruit_pm25.i2c import PM25_I2C
 
 # PM10
 # Particulate matter PM10 is either directly emitted from a source (primary PM)
-# or is formed through the chemical reactions of gases such as oxides of 
+# or is formed through the chemical reactions of gases such as oxides of
 # sulfur (SOx), nitrogen oxides (NOx), organic compounds, etc. in the atmosphere
 # (secondary PM). Whereas, the natural sources of particulate matter are
 # wind-blown dust from open land, pollen, spores, mold, dirt, soil erosion,
 # and forest fires.
-
-# The emission of particulate matter PM100 directly takes place into the
-# atmosphere from various sources. The natural sources of particulate matter are
-# wind-blown dust from open land, dirt, soil erosion, etc
 
 
 class Detector():
