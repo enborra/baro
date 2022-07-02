@@ -21,6 +21,7 @@ if __name__ == "__main__":
     hud = HeadsUpDisplay()
 
     cycle_count = 0
+    sensorRefreshSeconds = 20
     lastRefreshTime = time.time()
 
     while True:
@@ -29,8 +30,7 @@ if __name__ == "__main__":
         try:
             currentTime = time.time()
 
-            if currentTime > lastRefreshTime + 20:
-                print("updating sensors")
+            if currentTime > lastRefreshTime + sensorRefreshSeconds:
                 d.refresh()
                 lastRefreshTime = currentTime
 
