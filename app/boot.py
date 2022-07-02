@@ -54,24 +54,27 @@ if __name__ == "__main__":
 
     # Create the ui components
 
-    elTitleText = label.Label(font_large, text='', color=0xffffff)
-    elTitleText.x = 40
-    elTitleText.y = 70
-    elTitleText.scale = 1
-    splash.append(elTitleText)
+    txtTitle = label.Label(
+        font_large,
+        text='',
+        color=0xffffff,
+        anchored_position=(40,70)
+        scale=1
+    )
 
-    elBodyText = label.Label(font_small, text='', color=0xffffff)
-    elBodyText.x = 40
-    elBodyText.y = 130
-    elBodyText.scale = 1
-    splash.append(elBodyText)
+    splash.append( txtTitle )
 
+    txtBody = label.Label(font_small, text='', color=0xffffff)
+    txtBody.x = 40
+    txtBody.y = 130
+    txtBody.scale = 1
+    splash.append( txtBody )
 
-    elTimeText = label.Label(font_small, text='', color=0xaaaaaa)
-    elTimeText.x = 15
-    elTimeText.y = 15
-    elTimeText.scale = 1
-    splash.append(elTimeText)
+    txtTime = label.Label(font_small, text='', color=0xaaaaaa)
+    txtTime.x = 15
+    txtTime.y = 15
+    txtTime.scale = 1
+    splash.append( txtTime )
 
     while True:
         time.sleep(3)
@@ -104,9 +107,9 @@ if __name__ == "__main__":
             else:
                 displayFace = 0
 
-            elTimeText.text = strftime("%H:%M", time.localtime())
-            elTitleText.text = title_text
-            elBodyText.text = body_text
+            txtTime.text = strftime("%H:%M", time.localtime())
+            txtTitle.text = title_text
+            txtBody.text = body_text
 
             cycle_count = cycle_count + 1
 
