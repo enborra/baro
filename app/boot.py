@@ -46,7 +46,6 @@ if __name__ == "__main__":
 
     font_large = bitmap_font.load_font("fonts/futura-medium-35.bdf")
     font_small = bitmap_font.load_font("fonts/futura-medium-20.bdf")
-    cycle = True
     cycle_count = 0
     displayFace = 0
 
@@ -54,25 +53,19 @@ if __name__ == "__main__":
 
     # Create the ui components
 
-    txtTitle = label.Label( font_large, color=0xffffff, x=40, y=70, scale=1 )
+    txtTitle = label.Label( font_large, text='', color=0xffffff, x=40, y=70, scale=1 )
     splash.append( txtTitle )
 
-    txtBody = label.Label( font_small, color=0xffffff, x=40,  scale=1 )
+    txtBody = label.Label( font_small, text='', color=0xffffff, x=40, y=130, scale=1 )
     splash.append( txtBody )
 
-    txtTime = label.Label( font_small, color=0xaaaaaa, x=15, y=15, scale=1 )
+    txtTime = label.Label( font_small, text='', color=0xaaaaaa, x=15, y=15, scale=1 )
     splash.append( txtTime )
 
     while True:
         time.sleep(3)
 
         try:
-            # color_bitmap = displayio.Bitmap(320, 240, 1)
-            # color_palette = displayio.Palette(1)
-            # color_palette[0] = 0x000000
-            # bg_sprite = displayio.TileGrid(color_bitmap, x=0, y=0, pixel_shader=color_palette)
-            # splash.append(bg_sprite)
-
             if cycle_count > 10:
                 d.refresh()
                 cycle_count = 0
