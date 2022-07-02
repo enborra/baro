@@ -54,27 +54,13 @@ if __name__ == "__main__":
 
     # Create the ui components
 
-    txtTitle = label.Label(
-        font_large,
-        text='',
-        color=0xffffff,
-        x=40,
-        y=70,
-        scale=1
-    )
-
+    txtTitle = label.Label( font_large, color=0xffffff, x=40, y=70, scale=1 )
     splash.append( txtTitle )
 
-    txtBody = label.Label(font_small, text='', color=0xffffff)
-    txtBody.x = 40
-    txtBody.y = 130
-    txtBody.scale = 1
+    txtBody = label.Label( font_small, color=0xffffff, x=40,  scale=1 )
     splash.append( txtBody )
 
-    txtTime = label.Label(font_small, text='', color=0xaaaaaa)
-    txtTime.x = 15
-    txtTime.y = 15
-    txtTime.scale = 1
+    txtTime = label.Label( font_small, color=0xaaaaaa, x=15, y=15, scale=1 )
     splash.append( txtTime )
 
     while True:
