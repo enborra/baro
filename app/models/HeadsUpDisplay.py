@@ -24,7 +24,7 @@ class HeadsUpDisplay():
     _display = None
     _splash = None
     _bg_sprite = None
-    
+
     _fontLarge = None
     _fontSmall = None
     _txtTime = None
@@ -39,6 +39,7 @@ class HeadsUpDisplay():
 
         displayio.release_displays()
 
+        self._spi = board.SPI()
         self._displayBus = displayio.FourWire( self._spi, command=self._tftDC, chip_select=self._tftCS, reset=self._tftReset )
         self._display = adafruit_ili9341.ILI9341( self._displayBus, width=self._displayWidth, height=self._displayHeight, rotation=self._displayRotation )
         self._splash = displayio.Group()
