@@ -3,6 +3,7 @@
 # from datetime import date
 # import calendar
 
+import os
 import board
 import displayio
 import adafruit_ili9341
@@ -54,8 +55,10 @@ class HeadsUpDisplay():
         self._splash.append( self._bgSprite )
         self._display.show( self._splash )
 
-        _fontLarge = bitmap_font.load_font("/fonts/futura-medium-35.bdf")
-        _fontSmall = bitmap_font.load_font("/fonts/futura-medium-20.bdf")
+        ROOT_DIR = os.path.abspath(os.curdir)
+
+        _fontLarge = bitmap_font.load_font(ROOT_DIR+"/fonts/futura-medium-35.bdf")
+        _fontSmall = bitmap_font.load_font(ROOT_DIR+"/fonts/futura-medium-20.bdf")
 
         # Create the ui components
 
