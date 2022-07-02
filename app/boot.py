@@ -13,7 +13,7 @@ import calendar
 # from adafruit_bitmap_font import bitmap_font
 
 from models.Detector import Detector
-from models.Thing import HeadsUpDisplay
+# from models.Thing import HeadsUpDisplay
 
 
 def keyboardHandler(signum, frame):
@@ -25,8 +25,8 @@ if __name__ == "__main__":
     d = Detector()
     d.refresh()
 
-    hud = Thing()
-    hud.show()
+    # hud = Thing()
+    # hud.show()
 
     # displayio.release_displays()
     #
@@ -89,7 +89,7 @@ if __name__ == "__main__":
             else:
                 displayFace = 0
 
-            hud.setText( title=title_text, body=body_text )
+            # hud.setText( title=title_text, body=body_text )
 
             # txtTime.text = strftime("%H:%M", time.localtime())
             # txtTitle.text = title_text
