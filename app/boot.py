@@ -58,6 +58,26 @@ if __name__ == "__main__":
                 body_text += ('\nPollen: %d' % pmLarge)
 
             else:
+                baroInches = d.getStat('barometric_pressure_inches')
+
+                if baroInches > 31:
+                    title_text = 'Very dry.'
+
+                elif baroInches > 30:
+                    title_text = 'Dry.'
+
+                elif baroInches > 29:
+                    title_text = 'Overcast'
+
+                elif baroInches > 28:
+                    title_text = 'Rain'
+
+                elif baroInches > 27:
+                    title_text = 'Heavy rain'
+                    
+                else:
+                    title_text = "Storm's comin."
+
                 title_text = "Feel"
                 body_text = ('Temp: %0.0f' % d.getStat('temp')) + '°F'
                 body_text += ('\nHumidity: %d' % d.getStat('humidity')) + '%'
