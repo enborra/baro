@@ -24,27 +24,27 @@ if __name__ == "__main__":
     lastRefreshTime = time.time()
 
     while True:
-        time.sleep(2)
+        time.sleep(4)
 
         try:
             if time.time() > lastRefreshTime + 10:
                 print("updating sensors")
                 d.refresh()
 
-            if cycle_count > 10:
+            if cycle_count > 2:
                 cycle_count = 0
 
-            elif cycle_count > 5:
-                title_text = "Temp"
-                body_text = ('Temp: %0.0f°F' % d.getStat('temp'))
-                body_text += ('\nHumidity: %d' % d.getStat('humidity'))
-                body_text += ('\nBarometric: %d' % d.getStat('barometric_pressure'))
-
-            else:
+            if cycle_count == 1:
                 title_text = "Air"
                 body_text = ("Small dust: %d" % d.getStat('air_quality_small'))
                 body_text += ('\nMedium dust: %d' % d.getStat('air_quality_medium'))
                 body_text += ('\nBig dust: %d' % d.getStat('air_quality_large'))
+
+            else:
+                title_text = "Temp"
+                body_text = ('Temp: %0.0f°F' % d.getStat('temp'))
+                body_text += ('\nHumidity: %d' % d.getStat('humidity'))
+                body_text += ('\nBarometric: %d' % d.getStat('barometric_pressure'))
 
             hud.setText( title=title_text, body=body_text )
 
