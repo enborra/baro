@@ -21,7 +21,7 @@ if __name__ == "__main__":
     hud = HeadsUpDisplay()
 
     cycle_count = 0
-    sensorRefreshSeconds = 20
+    sensorRefreshSeconds = 5
     lastRefreshTime = time.time()
 
     while True:
