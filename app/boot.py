@@ -11,9 +11,9 @@ import calendar
 # from adafruit_rgb_display import color565
 # from adafruit_display_text import label
 # from adafruit_bitmap_font import bitmap_font
+from models.HeadsUpDisplay import HeadsUpDisplay
 
 from models.Detector import Detector
-# from models.HeadsUpDisplay import HeadsUpDisplay
 
 
 def keyboardHandler(signum, frame):
