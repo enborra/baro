@@ -15,6 +15,10 @@ class Detector():
     baroSensor = None
     airSensor = None
 
+    _millibarToInchesOfMercury = 0.0295301
+
+
+
     _data = {
         'temp': None,
         'humidity': None,
@@ -39,6 +43,7 @@ class Detector():
         self._data['humidity'] = self.tempSensor.relative_humidity
 
         self._data['barometric_pressure'] = self.baroSensor.pressure
+        self._data['barometric_pressure_inches'] = self.baroSensor.pressure * self._millibarToInchesOfMercury
         self._data['altitude'] = self.baroSensor.altitude
 
         aq = self.airSensor.read()
