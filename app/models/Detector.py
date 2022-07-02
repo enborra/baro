@@ -84,3 +84,43 @@ class Detector():
             o = self._data[ str(stat) ]
 
         return o
+
+    def getWeatherDescription(self, *args, **kwargs):
+        output = ''
+        baroInches = self.getStat('barometric_pressure_inches')
+        temp = self.getStat('temp')
+
+        if baroInches > 30:
+            output = 'Very dry'
+
+        elif baroInches > 29:
+            output = 'Dry'
+
+        elif baroInches > 28:
+            output = 'Overcast'
+
+        elif baroInches > 27:
+            output = 'Rain'
+
+        elif baroInches > 26:
+            output = 'Heavy rain'
+
+        else:
+            output = "Storm's comin"
+
+        if temp > 80:
+            output += ' & hot'
+
+        elif temp > 70:
+            output += ' & warm'
+
+        elif temp > 60:
+            output += ' & cool'
+
+        elif temp > 32:
+            output += ' & cold'
+
+        else:
+            output += ' & freezing'
+
+        return output
