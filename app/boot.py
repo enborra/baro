@@ -27,9 +27,12 @@ if __name__ == "__main__":
         time.sleep(4)
 
         try:
-            if time.time() > lastRefreshTime + 20:
+            currentTime = time.time()
+
+            if currentTime > lastRefreshTime + 20:
                 print("updating sensors")
                 d.refresh()
+                lastRefreshTime = currentTime
 
             if cycle_count > 2:
                 cycle_count = 0
