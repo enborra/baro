@@ -5,12 +5,12 @@ from time import strftime
 from datetime import date
 import calendar
 
-import board
-import displayio
-import adafruit_ili9341
-from adafruit_rgb_display import color565
-from adafruit_display_text import label
-from adafruit_bitmap_font import bitmap_font
+# import board
+# import displayio
+# import adafruit_ili9341
+# from adafruit_rgb_display import color565
+# from adafruit_display_text import label
+# from adafruit_bitmap_font import bitmap_font
 
 from models.Detector import Detector
 from models.Hud import Hud
