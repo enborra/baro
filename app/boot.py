@@ -50,7 +50,7 @@ if __name__ == "__main__":
 
             hud.setText( title=title_text, body=body_text )
 
-            cycle_count = cycle_count + 1
+            cycle_count += 1
 
         except Exception as e:
             print(e)
