@@ -10,6 +10,34 @@ import adafruit_bmp280
 from adafruit_pm25.i2c import PM25_I2C
 
 
+
+# PM1
+# Sources of PM1 include marine aerosol, soil erosion, volcanic eruptions, and
+# forest fires. Other sources are burning fossil fuels, agricultural processes,
+# cooking & cigarette smoke, emission from diesel-powered vehicles, power
+# generation, industrial processes, and so on
+
+# PM2.5
+# Emission of particulate matter PM2.5 is either directly from a source
+# (primary PM) or through the chemical reactions of gases such as oxides of
+# sulfur (SOx), nitrogen oxides (NOx), organic compounds, etc. in the atmosphere
+# (secondary PM). Simultaneously, the natural sources of particulate matter are
+# wind-blown dust from open land, pollen, spores, mold, dirt, soil erosion, and
+# forest fires.
+
+# PM10
+# Particulate matter PM10 is either directly emitted from a source (primary PM)
+# or is formed through the chemical reactions of gases such as oxides of 
+# sulfur (SOx), nitrogen oxides (NOx), organic compounds, etc. in the atmosphere
+# (secondary PM). Whereas, the natural sources of particulate matter are
+# wind-blown dust from open land, pollen, spores, mold, dirt, soil erosion,
+# and forest fires.
+
+# The emission of particulate matter PM100 directly takes place into the
+# atmosphere from various sources. The natural sources of particulate matter are
+# wind-blown dust from open land, dirt, soil erosion, etc
+
+
 class Detector():
     tempSensor = None
     baroSensor = None
