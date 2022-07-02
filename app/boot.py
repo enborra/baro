@@ -13,6 +13,7 @@ from adafruit_display_text import label
 from adafruit_bitmap_font import bitmap_font
 
 from models.Detector import Detector
+from models.Hud import Hud
 
 
 def keyboardHandler(signum, frame):
@@ -24,41 +25,44 @@ if __name__ == "__main__":
     d = Detector()
     d.refresh()
 
-    displayio.release_displays()
+    hud = Hud()
+    hud.show()
 
-    spi = board.SPI()
-    tft_cs = board.CE0
-    tft_dc = board.D25
+    # displayio.release_displays()
+    #
+    # spi = board.SPI()
+    # tft_cs = board.CE0
+    # tft_dc = board.D25
+    #
+    # display_bus = displayio.FourWire( spi, command=tft_dc, chip_select=tft_cs, reset=board.D6 )
+    # display = adafruit_ili9341.ILI9341( display_bus, width=320, height=240, rotation=180 )
+    # splash = displayio.Group()
+    #
+    # # Blank the screen
+    #
+    # color_bitmap = displayio.Bitmap(320, 240, 1)
+    # color_palette = displayio.Palette(1)
+    # color_palette[0] = 0x000000
+    # bg_sprite = displayio.TileGrid(color_bitmap, x=0, y=0, pixel_shader=color_palette)
+    # splash.append(bg_sprite)
+    #
+    # display.show(splash)
 
-    display_bus = displayio.FourWire( spi, command=tft_dc, chip_select=tft_cs, reset=board.D6 )
-    display = adafruit_ili9341.ILI9341( display_bus, width=320, height=240, rotation=180 )
-    splash = displayio.Group()
-
-    # Blank the screen
-
-    color_bitmap = displayio.Bitmap(320, 240, 1)
-    color_palette = displayio.Palette(1)
-    color_palette[0] = 0x000000
-    bg_sprite = displayio.TileGrid(color_bitmap, x=0, y=0, pixel_shader=color_palette)
-    splash.append(bg_sprite)
-
-    display.show(splash)
-
-    font_large = bitmap_font.load_font("fonts/futura-medium-35.bdf")
-    font_small = bitmap_font.load_font("fonts/futura-medium-20.bdf")
+    # font_large = bitmap_font.load_font("fonts/futura-medium-35.bdf")
+    # font_small = bitmap_font.load_font("fonts/futura-medium-20.bdf")
     cycle_count = 0
     displayFace = 0
 
-    # Create the ui components
-
-    txtTitle = label.Label( font_large, text='', color=0xffffff, x=40, y=70, scale=1 )
-    splash.append( txtTitle )
-
-    txtBody = label.Label( font_small, text='', color=0xffffff, x=40, y=130, scale=1 )
-    splash.append( txtBody )
-
-    txtTime = label.Label( font_small, text='', color=0xaaaaaa, x=15, y=15, scale=1 )
-    splash.append( txtTime )
+    # # Create the ui components
+    #
+    # txtTitle = label.Label( font_large, text='', color=0xffffff, x=40, y=70, scale=1 )
+    # splash.append( txtTitle )
+    #
+    # txtBody = label.Label( font_small, text='', color=0xffffff, x=40, y=130, scale=1 )
+    # splash.append( txtBody )
+    #
+    # txtTime = label.Label( font_small, text='', color=0xaaaaaa, x=15, y=15, scale=1 )
+    # splash.append( txtTime )
 
     while True:
         time.sleep(3)
@@ -85,9 +89,11 @@ if __name__ == "__main__":
             else:
                 displayFace = 0
 
-            txtTime.text = strftime("%H:%M", time.localtime())
-            txtTitle.text = title_text
-            txtBody.text = body_text
+            hud.setText( title=title_text, body=body_text )
+
+            # txtTime.text = strftime("%H:%M", time.localtime())
+            # txtTitle.text = title_text
+            # txtBody.text = body_text
 
             cycle_count = cycle_count + 1
 
