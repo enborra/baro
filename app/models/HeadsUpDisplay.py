@@ -13,16 +13,18 @@ from adafruit_bitmap_font import bitmap_font
 
 class HeadsUpDisplay():
     _spi = None
-    _tft_cs = None
-    _tft_dc = None
-    _tft_reset = None
+    _tftCS = None
+    _tftDC = None
+    _tftReset = None
     _displayBus = None
+
     _displayWidth = 320
     _displayHeight = 240
     _displayRotation = 180
     _display = None
     _splash = None
     _bg_sprite = None
+    
     _fontLarge = None
     _fontSmall = None
     _txtTime = None
@@ -31,14 +33,14 @@ class HeadsUpDisplay():
 
 
     def __init__(self, *args, **kwargs):
-        self._tft_cs = board.CE0
-        self._tft_dc = board.D25
-        self._tft_reset = board.D6
+        self._tftCS = board.CE0
+        self._tftDC = board.D25
+        self._tftReset = board.D6
 
         displayio.release_displays()
 
-        self._displayBus = displayio.FourWire( self._spi, command=self._tft_dc, chip_select=self._tft_cs, reset=self._tft_reset )
-        self._display = adafruit_ili9341.ILI9341( self._display_bus, width=self._displayWidth, height=self._displayHeight, rotation=self._displayRotation )
+        self._displayBus = displayio.FourWire( self._spi, command=self._tftDC, chip_select=self._tftCS, reset=self._tftReset )
+        self._display = adafruit_ili9341.ILI9341( self._displayBus, width=self._displayWidth, height=self._displayHeight, rotation=self._displayRotation )
         self._splash = displayio.Group()
 
         # Blank the screen
