@@ -38,24 +38,11 @@ if __name__ == "__main__":
                 cycle_count = 0
 
             if cycle_count == 1:
-                pmLarge = d.getStat('air_quality_large')
-                pmMedium = d.getStat('air_quality_medium')
-                pmSmall = d.getStat('air_quality_small')
+                title_text = d.getAirDescription()
 
-                title_text = "Air: "
-
-                if pmLarge < 50:
-                    title_text += 'Great'
-
-                elif pmLarge <200:
-                    title_text += 'Moderate'
-
-                else:
-                    title_text += 'Bad'
-
-                body_text = ("Chemicals: %d" % pmSmall)
-                body_text += ('\nSmoke & dust: %d' % pmMedium)
-                body_text += ('\nPollen: %d' % pmLarge)
+                body_text = ("Chemicals: %d" % d.getStat('air_quality_small'))
+                body_text += ('\nSmoke & dust: %d' % d.getStat('air_quality_medium'))
+                body_text += ('\nPollen: %d' % d.getStat('air_quality_large'))
 
             else:
                 title_text = d.getWeatherDescription()

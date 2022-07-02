@@ -87,8 +87,8 @@ class Detector():
 
     def getWeatherDescription(self, *args, **kwargs):
         output = ''
-        baroInches = self.getStat('barometric_pressure_inches')
-        temp = self.getStat('temp')
+        baroInches = self._data['barometric_pressure_inches']
+        temp = self._data['temp']
 
         if baroInches > 30:
             output = 'Very dry'
@@ -122,5 +122,22 @@ class Detector():
 
         else:
             output += ' & freezing'
+
+        return output
+
+    def getAirDescription(self, *args, **kwargs):
+        output = ''
+        pmLarge = self._data['air_quality_large']
+        pmMedium = self._data['air_quality_medium']
+        pmSmall = self._data['air_quality_small']
+
+        if pmLarge < 50:
+            output += 'Clear air'
+
+        elif pmLarge <200:
+            output += 'Unhealthy air'
+
+        else:
+            output += 'Bad air'
 
         return output
