@@ -52,16 +52,36 @@ if __name__ == "__main__":
 
     signal.signal
 
+    # Create the ui components
+
+    elTitleText = label.Label(font_large, text='', color=0xffffff)
+    elTitleText.x = 40
+    elTitleText.y = 70
+    elTitleText.scale = 1
+    splash.append(elTitleText)
+
+    elBodyText = label.Label(font_small, text='', color=0xffffff)
+    elBodyText.x = 40
+    elBodyText.y = 130
+    elBodyText.scale = 1
+    splash.append(elBodyText)
+
+
+    elTimeText = label.Label(font_small, text='', color=0xaaaaaa)
+    elTimeText.x = 15
+    elTimeText.y = 15
+    elTimeText.scale = 1
+    splash.append(elTimeText)
+
     while True:
         time.sleep(36)
 
         try:
-            color_bitmap = displayio.Bitmap(320, 240, 1)
-            color_palette = displayio.Palette(1)
-            color_palette[0] = 0x000000
-            bg_sprite = displayio.TileGrid(color_bitmap, x=0, y=0, pixel_shader=color_palette)
-            splash.append(bg_sprite)
-
+            # color_bitmap = displayio.Bitmap(320, 240, 1)
+            # color_palette = displayio.Palette(1)
+            # color_palette[0] = 0x000000
+            # bg_sprite = displayio.TileGrid(color_bitmap, x=0, y=0, pixel_shader=color_palette)
+            # splash.append(bg_sprite)
 
             if cycle_count > 10:
                 d.refresh()
@@ -84,24 +104,9 @@ if __name__ == "__main__":
             else:
                 displayFace = 0
 
-            title_text_el = label.Label(font_large, text=title_text, color=0xffffff)
-            title_text_el.x = 40
-            title_text_el.y = 70
-            title_text_el.scale = 1
-            splash.append(title_text_el)
-
-            body_text_el = label.Label(font_small, text=body_text, color=0xffffff)
-            body_text_el.x = 40
-            body_text_el.y = 130
-            body_text_el.scale = 1
-            splash.append(body_text_el)
-
-            time_text = strftime("%H:%M", time.localtime())
-            time_text_el = label.Label(font_small, text=time_text, color=0xaaaaaa)
-            time_text_el.x = 15
-            time_text_el.y = 15
-            time_text_el.scale = 1
-            splash.append(time_text_el)
+            elTimeText.text = strftime("%H:%M", time.localtime())
+            elTitleText.text = title_text
+            elBodyText.text = body_text
 
             cycle_count = cycle_count + 1
 
