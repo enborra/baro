@@ -72,6 +72,6 @@ class HeadsUpDisplay():
         title_text = kwargs.get('title')
         body_text = kwargs.get('body')
 
-        self._txtTime.text = strftime("%H:%M", time.localtime())
+        self._txtTime.text = strftime("%I:%M %p", time.localtime())
         self._txtTitle.text = title_text
         self._txtBody.text = body_text
