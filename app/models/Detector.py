@@ -89,39 +89,25 @@ class Detector():
         output = ''
         baroInches = self._data['barometric_pressure_inches']
         temp = self._data['temp']
+        humidity = self._data['humidity']
 
-        if baroInches > 30:
-            output = 'No rain'
+            if baroInches > 30:
+                output = 'No rain soon'
 
-        elif baroInches > 29:
-            output = 'No rain'
+            elif baroInches > 29:
+                output = 'Maybe rain soon'
 
-        elif baroInches > 28:
-            output = 'Rain soon'
+            elif baroInches > 28:
+                output = 'Rain soon'
 
-        elif baroInches > 27:
-            output = 'Rain'
+            elif baroInches > 27:
+                output = 'Rain'
 
-        elif baroInches > 26:
-            output = 'Heavy rain'
+            elif baroInches > 26:
+                output = 'Heavy rain'
 
-        else:
-            output = "Stormin'"
-
-        if temp > 80:
-            output += ' & hot'
-
-        elif temp > 70:
-            output += ' & warm'
-
-        elif temp > 60:
-            output += ' & cool'
-
-        elif temp > 32:
-            output += ' & cold'
-
-        else:
-            output += ' & freezing'
+            else:
+                output = "Stormin'"
 
         return output
 
