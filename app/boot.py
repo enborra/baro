@@ -40,7 +40,7 @@ if __name__ == "__main__":
             if cycle_count == 1:
                 title_text = d.getAirDescription()
 
-                body_text = (".   %d" % d.getStat('air_quality_small')) + ' ppm'
+                body_text = (" .  %d" % d.getStat('air_quality_small')) + ' ppm'
                 body_text += ('\n°  %d' % d.getStat('air_quality_medium')) + ' ppm'
                 body_text += ('\no  %d' % d.getStat('air_quality_large')) + ' ppm'
 
