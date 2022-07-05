@@ -49,7 +49,7 @@ if __name__ == "__main__":
 
                 body_text = ('Temp: %0.0f' % d.getStat('temp')) + '°F'
                 body_text += ('\nHumidity: %d' % d.getStat('humidity')) + '%'
-                body_text += ('\nBarometric: %0.1f' % d.getStat('barometric_pressure_inches')) + 'in.'
+                body_text += ('\nBarometric: %0.2f' % d.getStat('barometric_pressure_inches')) + 'in.'
 
             hud.setText( title=title_text, body=body_text )
 
