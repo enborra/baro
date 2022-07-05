@@ -95,7 +95,7 @@ class Detector():
             output = 'No rain soon'
 
         elif baroInches > 29:
-            output = 'Maybe rain soon'
+            output = 'Maybe rain'
 
         elif baroInches > 28:
             output = 'Rain soon'
