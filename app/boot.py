@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
                 body_text = ("Small particles: %d" % d.getStat('air_quality_small'))
                 body_text += ('\nMedium particles: %d' % d.getStat('air_quality_medium'))
-                body_text += ('\Big particles: %d' % d.getStat('air_quality_large'))
+                body_text += ('\nBig particles: %d' % d.getStat('air_quality_large'))
 
             else:
                 title_text = d.getWeatherDescription()
