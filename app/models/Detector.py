@@ -91,13 +91,13 @@ class Detector():
         temp = self._data['temp']
 
         if baroInches > 30:
-            output = 'Very dry'
+            output = 'No rain'
 
         elif baroInches > 29:
-            output = 'Dry'
+            output = 'No rain'
 
         elif baroInches > 28:
-            output = 'Overcast'
+            output = 'Rain soon'
 
         elif baroInches > 27:
             output = 'Rain'
@@ -106,7 +106,7 @@ class Detector():
             output = 'Heavy rain'
 
         else:
-            output = "Storm's comin"
+            output = "Stormin'"
 
         if temp > 80:
             output += ' & hot'
