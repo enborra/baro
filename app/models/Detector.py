@@ -91,20 +91,17 @@ class Detector():
         temp = self._data['temp']
         humidity = self._data['humidity']
 
-        if baroInches > 30:
+        if baroInches >= 30.20:
             output = 'No rain soon'
 
-        elif baroInches > 29:
+        elif baroInches >= 29.80:
             output = 'Maybe rain'
 
-        elif baroInches > 28:
+        elif baroInches >= 28:
             output = 'Rain soon'
 
-        elif baroInches > 27:
+        elif baroInches >= 27.5:
             output = 'Rain'
-
-        elif baroInches > 26:
-            output = 'Heavy rain'
 
         else:
             output = "Stormin'"
