@@ -20,7 +20,7 @@ class HeadsUpDisplay():
 
     _displayWidth = 320
     _displayHeight = 240
-    _displayRotation = 180
+    _displayRotation = 0
     _display = None
     _splash = None
     _bgSprite = None
