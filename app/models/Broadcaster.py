@@ -13,9 +13,11 @@ class Broadcaster():
 
         if self._interval_count > self._broadcast_interval:
             t = str(kwargs['temp'])
+            h = str(kwargs['humidity'])
+            b = str(kwargs['barometric'])
             # t = '0'
 
-            r = requests.get('http://admin.gingerbee.co/api/temp?t='+t+'&h=3&b=2')
+            r = requests.get( 'http://admin.gingerbee.co/api/temp?t='+t+'&h='+h+'&b='+b )
 
             self._interval_count = 0
 
