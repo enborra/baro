@@ -7,6 +7,7 @@ import calendar
 
 from models.Detector import Detector
 from models.HeadsUpDisplay import HeadsUpDisplay
+from models.Broadcaster import Broadcaster
 
 
 def keyboardHandler(signum, frame):
@@ -19,6 +20,7 @@ if __name__ == "__main__":
     d.refresh()
 
     hud = HeadsUpDisplay()
+    broadcaster = Broadcaster()
 
     cycle_count = 0
     sensorRefreshSeconds = 5
@@ -32,6 +34,10 @@ if __name__ == "__main__":
 
             if currentTime > lastRefreshTime + sensorRefreshSeconds:
                 d.refresh()
+                broadcaster.cycle(
+                    values=[d.getStat('temp'), d.getStat('humidity'), d.getStat('barometric_pressure_inches')]
+                )
+
                 lastRefreshTime = currentTime
 
             if cycle_count > 2:
