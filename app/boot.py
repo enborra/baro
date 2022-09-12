@@ -41,8 +41,8 @@ if __name__ == "__main__":
                         humidity=d.getStat('humidity'),
                         barometric=d.getStat('barometric_pressure_inches'),
                         air_small=d.getStat('air_quality_small'),
-                        air_medium=d.getStat('air_medium'),
-                        air_large=d.getStat('air_large')
+                        air_medium=d.getStat('air_quality_medium'),
+                        air_large=d.getStat('air_quality_large')
                     )
                 except Exception as e:
                     print(e)
