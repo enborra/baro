@@ -39,7 +39,10 @@ if __name__ == "__main__":
                     broadcaster.cycle(
                         temp=d.getStat('temp'),
                         humidity=d.getStat('humidity'),
-                        barometric=d.getStat('barometric_pressure_inches')
+                        barometric=d.getStat('barometric_pressure_inches'),
+                        air_small=d.getStat('air_quality_small'),
+                        air_medium=d.getStat('air_medium'),
+                        air_large=d.getStat('air_large')
                     )
                 except:
                     pass

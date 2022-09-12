@@ -15,9 +15,12 @@ class Broadcaster():
             t = str(kwargs['temp'])
             h = str(kwargs['humidity'])
             b = str(kwargs['barometric'])
+            as = str(kwargs['air_small'])
+            am = str(kwargs['air_medium'])
+            al = str(kwargs['air_large'])
             # t = '0'
 
-            r = requests.get( 'http://admin.gingerbee.co/api/temp?t='+t+'&h='+h+'&b='+b )
+            r = requests.get( 'http://admin.gingerbee.co/api/temp?temp='+t+'&humidity='+h+'&barometric='+b+'&air_small='+as+'&air_medium='+am+'&air_large='+al )
 
             self._interval_count = 0
 
