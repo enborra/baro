@@ -44,7 +44,7 @@ if __name__ == "__main__":
                         air_medium=d.getStat('air_medium'),
                         air_large=d.getStat('air_large')
                     )
-                except e as Exception:
+                except Exception as e:
                     print(e)
 
                 lastRefreshTime = currentTime
