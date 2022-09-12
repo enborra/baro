@@ -2,7 +2,7 @@ import requests
 
 
 class Broadcaster():
-    _broadcast_interval = 10
+    _broadcast_interval = 1
     _interval_count = 0
 
 
