@@ -17,4 +17,7 @@ class Broadcaster():
 
             r = requests.get('http://admin.gingerbee.co/api/temp?t='+t+'&h=3&b=2')
 
+            self._interval_count = 0
+
+        else:
             self._interval_count += 1
