@@ -35,7 +35,11 @@ if __name__ == "__main__":
             if currentTime > lastRefreshTime + sensorRefreshSeconds:
                 d.refresh()
                 broadcaster.cycle(
-                    values=[d.getStat('temp'), d.getStat('humidity'), d.getStat('barometric_pressure_inches')]
+                    values={
+                        'temp': d.getStat('temp'),
+                        'humidity': d.getStat('humidity'),
+                        'barometric': d.getStat('barometric_pressure_inches')
+                    }
                 )
 
                 lastRefreshTime = currentTime
