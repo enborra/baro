@@ -11,5 +11,7 @@ class Broadcaster():
         pass
 
     def cycle(self, *args, **kwargs):
-        r = requests.get('http://admin.gingerbee.co/api/temp?t='+kwargs.get('temp')+'&h=3&b=2')
+        t = kwargs['temp']
+
+        r = requests.get('http://admin.gingerbee.co/api/temp?t='+t+'&h=3&b=2')
         # pass
